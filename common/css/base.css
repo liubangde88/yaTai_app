@@ -1,0 +1,171 @@
+/*每个页面公共css */
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+.flexAround {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.flexBetween {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.flexColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+/* 一行省略 */
+.line-one {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	word-break: break-all;
+}
+
+/** 两行省略 */
+.line-two {
+	text-overflow: -o-ellipsis-lastline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	/*! autoprefixer: ignore next */
+	-webkit-box-orient: vertical;
+}
+
+/* 纯英语、数字换行 */
+.word-b {
+	word-break: break-all;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.abs {
+	position: absolute;
+}
+
+.rel {
+	position: relative;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.flex-cen {
+	justify-content: center;
+}
+
+.flex-sb {
+	justify-content: space-between;
+}
+
+.flex-sa {
+	justify-content: space-around;
+}
+
+/* 按钮 */
+.btn-box {
+	width: 100%;
+	height: 140rpx;
+	position: fixed;
+	bottom: 0;
+	left: 0rpx;
+	z-index: 10;
+	/* padding: 10rpx 30rpx 50rpx 30rpx;
+	box-sizing: border-box; */
+}
+
+.btn {
+	/* background: linear-gradient(90deg, #e7d2a7, #d3c29f); */
+	height: 80rpx;
+	border-radius: 40rpx;
+	font-size: 32rpx;
+	color: #fff;
+	line-height: 80rpx;
+	text-align: center;
+}
+
+.main {
+	width: 100%;
+	min-height: 100vh;
+}
+
+.bgWhite {
+	background-color: #fff;
+}
+
+.bgGray {
+	background: #f5f5f5;
+}
+
+.mainColor {
+	color: #72b5c5;
+}
+
+.mainBgColor {
+	background: #ff5555;
+}
+
+.col9 {
+	color: #999;
+}
+
+.col1 {
+	color: #101010;
+}
+
+.col6 {
+	color: #666;
+}
+
+.colf {
+	color: #fff;
+}
+
+.fs24 {
+	font-size: 24rpx;
+}
+
+.fs26 {
+	font-size: 26rpx;
+}
+
+.fs28 {
+	font-size: 28rpx;
+}
+
+.fs30 {
+	font-size: 30rpx;
+}
+
+.fs32 {
+	font-size: 32rpx;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+}
+
+.bor-b {
+	border-bottom: 1px solid #59c8dc;
+}
+
+.box {
+	padding-bottom: 30rpx;
+}
