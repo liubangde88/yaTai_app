@@ -14,7 +14,7 @@
 					<u-icon :name="item.icon" color="#111" size="18"></u-icon>
 					<text class="title flex-1 fs30 col1">{{item.name}}</text>
 					<u-icon name="arrow-right" color="#999" size="18" v-if="item.type != '3'"></u-icon>
-					<text class="fs28 col9" v-else>V1.1.6</text>
+					<text class="fs28 col9" v-else>V1.1.7</text>
 				</view>
 			</view>
 			<view class="log-out flex" @click="logOut" v-if="vuex_user.id">

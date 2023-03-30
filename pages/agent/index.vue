@@ -202,6 +202,7 @@
 <style scoped>
 	.header-box {
 		/* height: 600rpx; */
+		z-index: 120;
 	}
 
 	.nav-box {

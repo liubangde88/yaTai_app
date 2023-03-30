@@ -77,6 +77,10 @@
 			if(certType && certName && certNum) this.isAttestation = true
 			this.userInfo.withMan = certName ? certName : withMan ? withMan : ''
 			this.userInfo.documentType = certType ? certType : ''
+			if(this.isAttestation) {
+				let num = (certNum.length - 4)/2 > 0 ? (certNum.length - 4)/2 : 2
+				certNum = certNum.substring(0, num) + ' **** ' + certNum.slice(-num)
+			}
 			this.userInfo.documentNum = certNum ? certNum : ''
 		},
 		onShow() {
