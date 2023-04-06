@@ -6119,7 +6119,7 @@ var render = function () {
                           staticClass: _vm._$g("13-" + $30, "sc"),
                           attrs: { _i: "13-" + $30 },
                         },
-                        [_vm._v("V1.1.6")]
+                        [_vm._v("V1.1.9")]
                       ),
                 ],
                 1
@@ -6620,7 +6620,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 16);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.header-box[data-v-e83327a2] {\n\t/* height: 600rpx; */\n}\n.nav-box[data-v-e83327a2] {\n\twidth: 100%;\n\theight: 250rpx;\n}\n.money-box[data-v-e83327a2] {\n\theight: 250rpx;\n\talign-items: center;\n\tbackground-color: #edf7f9;\n}\n.money[data-v-e83327a2] {\n\tfont-size: 60rpx;\n\tcolor: rgb(44, 138, 160);\n\tmargin-top: 5rpx;\n}\n.tab-box[data-v-e83327a2] {\n\tpadding: 0 30rpx;\n\tbox-sizing: border-box;\n\tbackground-color: #edf7f9;\n}\n.menu[data-v-e83327a2] {\n\theight: 100rpx;\n}\n.menu-li[data-v-e83327a2] {\n\twidth: 50%;\n\theight: 100%;\n\tborder-bottom: 2rpx solid #edf7f9;\n}\n.active[data-v-e83327a2] {\n\tborder-bottom: 2rpx solid #59c8dc;\n}\n.add-agent[data-v-e83327a2] {\n\twidth: 100vw;\n\theight: 100vh;\n\tjustify-content: center;\n\talign-items: center;\n}\n.empty[data-v-e83327a2] {\n\twidth: 500rpx;\n\theight: 560rpx;\n\tmargin-bottom: 50rpx;\n}\n.btn[data-v-e83327a2] {\n\twidth: 60%;\n\tbackground: #56c4d9;\n\tmargin-top: 100rpx;\n}\n.project-main[data-v-e83327a2] {\n\tmargin-top: 600rpx;\n}\n.project-box[data-v-e83327a2] {\n\t/* min-height: calc( 100vh - 510rpx ); */\n}\n.record-ul[data-v-e83327a2] {\n\tpadding: 20rpx;\n}\n.record-li[data-v-e83327a2] {\n\tmin-height: 300rpx;\n\tpadding: 20rpx;\n}\n.record-li+.record-li[data-v-e83327a2] {\n\tborder-top: 2rpx solid #e3f1f4;\n}\n.mag-b[data-v-e83327a2] {\n\tmargin-bottom: 10rpx;\n}\n", ""]);
+exports.push([module.i, "\n.header-box[data-v-e83327a2] {\n\t/* height: 600rpx; */\n\tz-index: 120;\n}\n.nav-box[data-v-e83327a2] {\n\twidth: 100%;\n\theight: 250rpx;\n}\n.money-box[data-v-e83327a2] {\n\theight: 250rpx;\n\talign-items: center;\n\tbackground-color: #edf7f9;\n}\n.money[data-v-e83327a2] {\n\tfont-size: 60rpx;\n\tcolor: rgb(44, 138, 160);\n\tmargin-top: 5rpx;\n}\n.tab-box[data-v-e83327a2] {\n\tpadding: 0 30rpx;\n\tbox-sizing: border-box;\n\tbackground-color: #edf7f9;\n}\n.menu[data-v-e83327a2] {\n\theight: 100rpx;\n}\n.menu-li[data-v-e83327a2] {\n\twidth: 50%;\n\theight: 100%;\n\tborder-bottom: 2rpx solid #edf7f9;\n}\n.active[data-v-e83327a2] {\n\tborder-bottom: 2rpx solid #59c8dc;\n}\n.add-agent[data-v-e83327a2] {\n\twidth: 100vw;\n\theight: 100vh;\n\tjustify-content: center;\n\talign-items: center;\n}\n.empty[data-v-e83327a2] {\n\twidth: 500rpx;\n\theight: 560rpx;\n\tmargin-bottom: 50rpx;\n}\n.btn[data-v-e83327a2] {\n\twidth: 60%;\n\tbackground: #56c4d9;\n\tmargin-top: 100rpx;\n}\n.project-main[data-v-e83327a2] {\n\tmargin-top: 600rpx;\n}\n.project-box[data-v-e83327a2] {\n\t/* min-height: calc( 100vh - 510rpx ); */\n}\n.record-ul[data-v-e83327a2] {\n\tpadding: 20rpx;\n}\n.record-li[data-v-e83327a2] {\n\tmin-height: 300rpx;\n\tpadding: 20rpx;\n}\n.record-li+.record-li[data-v-e83327a2] {\n\tborder-top: 2rpx solid #e3f1f4;\n}\n.mag-b[data-v-e83327a2] {\n\tmargin-bottom: 10rpx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
