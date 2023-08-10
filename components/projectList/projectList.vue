@@ -1,53 +1,71 @@
 <template>
 	<view class="list-ul">
-		<view class="flex flex-cen" style="height: 500rpx;" v-if="list.length == 0">
-			<u-empty mode="list" :text="$t('message.emptyText')"></u-empty>
-		</view>
+		<image src="@/static/img/not-data.png"  v-if="list.length == 0" class="not-data-img" />
 		<template v-else>
-			<view class="list-li" v-for="(item,index) in list" :key="index"
+			<view class="list-li bgWhite" v-for="(item,index) in list" :key="index"
 				@click="toPath('/pages/project/projectDetail/index',item.id)">
-				<view class="li-info flex">
+				<view class="li-info">
 					<!-- 订单与代理页面不展示医生头像与名字 -->
-					<view class="li-left flexColumn" v-if="!isOrder && !isAgent">
-						<image :src="item.headImg || baseImg" mode="aspectFill" class="avatar"></image>
-						<text class="col1 fs28 word-b" style="width: 100%;text-align: center;">{{item.dname}}</text>
-					</view>
-					<view class="li-main">
-						<view class="mag-b fs30 col1 bold line-two word-b" style="width: 300rpx;">
-							{{item.pname}}
+					<view class="flex item-doctor" v-if="!isOrder && !isAgent">
+						<view class="flexColumn">
+							<image :src="item.headImg || baseImg" mode="aspectFill" class="avatar"></image>
 						</view>
-						<view class="mag-b fs26 col6 line-one" style="width: 300rpx;">
-							{{item.pcontent}}
+						<view style="max-width: 160px;">
+							<text class="col1 fs28 word-b">{{item.dname}}</text>
+							<view class="mag-b fs26 col6 line-one">
+								{{item.pcontent}}
+							</view>
+						</view>
+						<view class="li-right flex fs24 appointment" v-if="isShow" @click.stop="click(item.id)">
+							{{$t('message.appointment')}}
+						</view>
+					</view>
+					<view class="li-main flex">
+						<view>
+							<view class="title xmmc-title">{{$t('message.pName')}}</view>
+							<view class="content xmmc">
+								{{item.pname}}
+							</view>
 						</view>
 						<!-- 项目金额 -->
-						<view class="mag-b fs26 col6 flex">
-							{{$t('message.money')}}： <span style="color: red;">￥{{item.pprice || 0}}</span><span class="fs24">（HK$）</span>
+						<view>
+							<view class="title">{{$t('message.money')}}</view>
+							<view class="content">
+								<span>￥{{item.pprice || 0}}</span><span>（HK$）</span>
+							</view>
 						</view>
 						<view class="mag-b fs26 col6">
-							{{$t('message.percentage')}}： <span style="color: #4691cb;">{{item.agentPercent || 0}}%</span>
+							<view class="title">{{$t('message.percentage')}}</view>
+							<view class="content">
+								<span>{{item.agentPercent || 0}}%</span>
+							</view>
 						</view>
 						<!-- 从代理页面进入并且订单状态为已结算时显示结算日期与结算佣金 -->
 						<view class="mag-b fs26 col6" v-if="isAgent && item.status == '2'">
-							{{$t('message.setCommission')}}： <span style="color: red;">￥{{item.commission || 0}}</span>
+							<view>{{$t('message.setCommission')}}</view>
+							<view class="content">
+								<span>￥{{item.commission || 0}}</span>
+							</view>
 						</view>
 						<view class="mag-b fs26 col6" v-if="isAgent && item.status == '2'">
-							{{$t('message.settlementDate')}}：￥{{item.upTime}}
+							<view>{{$t('message.settlementDate')}}</view>
+							<view class="content">
+								￥{{item.upTime}}
+							</view>
 						</view>
 					</view>
-					<view class="li-right flex fs24 appointment" v-if="isShow" @click.stop="click(item.id)">
-						{{$t('message.appointment')}}
-					</view>
-					<view class="li-right flex fs24"
-						:class="item.status == '-1' ? 'failed' : item.status == '1' ? 'pass' : item.status == '2' ? 'settled' : 'no'"
-						v-if="isOrder">
-						<text v-if="item.status == '-1'">{{$t('message.failed')}}</text>
-						<text v-else-if="item.status == '0'">{{$t('message.notApproved')}}</text>
-						<text v-else-if="item.status == '1'">{{$t('message.approved')}}</text>
-						<text v-else>{{$t('message.settled')}}</text>
-					</view>
 				</view>
-				<view class="li-time fs24 col9" v-if="isShow || isOrder">
-					{{$t('message.releaseDate')}}：{{item.upTime}}
+						<view class="li-right flex fs24"
+							:class="item.status == '-1' ? 'failed' : item.status == '1' ? 'pass' : item.status == '2' ? 'settled' : 'no'"
+							v-if="isOrder">
+							<text v-if="item.status == '-1'">{{$t('message.failed')}}</text>
+							<text v-else-if="item.status == '0'">{{$t('message.notApproved')}}</text>
+							<text v-else-if="item.status == '1'">{{$t('message.approved')}}</text>
+							<text v-else>{{$t('message.settled')}}</text>
+						</view>
+				<view class="li-time fs24 col9 flex release-date" v-if="isShow || isOrder">
+					<view>{{$t('message.releaseDate')}}</view>
+					<view>{{item.upTime}}</view>
 				</view>
 			</view>
 			<!-- 加载更多 -->
@@ -58,8 +76,12 @@
 </template>
 
 <script>
+	import NotData from '@/components/notData/index.vue'; 
 	export default {
 		name: "projectList",
+		components: {
+			NotData
+		},
 		props: {
 			// 项目列表
 			list: {
@@ -125,6 +147,25 @@
 </script>
 
 <style scoped>
+  .xmmc-title {
+    text-align: left;
+  }
+  .xmmc {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    width: 100px;
+    text-align: left;
+    font-size: 14px !important;
+    font-weight: bolder;
+  }
+	.not-data-img{
+			width: 380rpx;
+			height: 420rpx;
+			margin-left: 140rpx;
+			margin-top: 200rpx;
+	}
 	.list-ul {
 		margin: 0 30rpx;
 		box-sizing: border-box;
@@ -133,10 +174,16 @@
 	.list-li {
 		min-height: 300rpx;
 		padding-bottom: 20rpx;
+		margin-bottom: 10px;
+		margin-left: -17px;
+		margin-right: -17px;
+		padding-left: 17px;
+		padding-right: 17px;
+		border-radius: 8px;
 	}
-
-	.list-li+.list-li {
-		border-top: 2rpx solid #e3f1f4;
+	
+	.list-li .item-doctor{
+		justify-content: space-between;
 	}
 
 	.li-info {
@@ -154,17 +201,27 @@
 	}
 
 	.avatar {
-		width: 120rpx;
-		height: 120rpx;
+		width: 86rpx;
+		height: 86rpx;
 		border-radius: 60rpx;
 		margin-bottom: 10rpx;
+		border: 2Px solid #A68F46;
 	}
 
 	.li-main {
-		flex: 1;
-		min-height: 250rpx;
-		padding: 20rpx 0;
-		box-sizing: border-box;
+		justify-content: space-between;
+		text-align: center;
+		margin-top: 60rpx;
+		margin-bottom: 50rpx;
+	}
+	.li-main .title{
+		font-size: 12px;
+		color: #979797;
+    text-align: left;
+	}
+	.li-main .content{
+		font-size: 16px;
+		color: #000000;
 	}
 
 	.li-right {
@@ -177,7 +234,7 @@
 	}
 
 	.appointment {
-		background: linear-gradient(-45deg, #54c2d6, #69d9ec);
+		background: linear-gradient(-45deg, #A19878, #A19878);
 	}
 
 	.pass {
@@ -204,5 +261,14 @@
 	
 	.mag-b {
 		margin-bottom: 10rpx;
+	}
+	.release-date{
+		justify-content: space-between;
+		border-top: 1px solid rgba(0, 0, 0, 0.05);
+		margin-left: -17px;
+		margin-right: -17px;
+		padding-left: 17px;
+		padding-right: 17px;
+		padding-top: 10px;
 	}
 </style>

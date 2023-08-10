@@ -13,17 +13,26 @@
 				{{$t('message.aim')}}
 			</view>
 		</view> -->
-		<view class="main abs">
-			<u-search :placeholder="$t('message.search')" :disabled="true" v-model="name" :clearabled="true"
-				:showAction="false" height="80rpx" searchIconColor="#72b5c5" searchIconSize="26" placeholderColor="#333"
-				color="#333" @click="toPath(1,'/pages/project/project/index')">
-			</u-search>
+		<view class="main abs home-search">
+			<u-search 
+			:placeholder="$t('message.search')" 
+			:disabled="true" 
+			v-model="name" 
+			:clearabled="true"
+			:showAction="false" 
+			height="50px" 
+			searchIconColor="#A19878" 
+			searchIconSize="26" 
+			placeholderColor="#333"
+			color="#333" 
+			@click="toPath(1,'/pages/project/project/index')" />
 
 			<!-- 首页banner -->
-			<view class="banner" v-if="banners.length > 0">
+			<!-- <view class="banner" v-if="banners.length > 0">
 				<u-swiper :list="banners" interval="8000" radius="6" height="300rpx" indicator indicatorMode="line"
 					circular keyName="bannerCover"></u-swiper>
-			</view>
+			</view> -->
+
 
 			<!-- 附件下载 -->
 			<!-- <view class="downLoad" v-if="fjInfo.length > 0">
@@ -38,7 +47,25 @@
 				</view>
 			</view> -->
 			<!-- 菜单栏 -->
-			<view class="menu bgWhite flexColumn flex-sa">
+			<view class="channel">
+				<view class="item" @click="toPath(1,'/pages/project/project/index')">
+					<image src="@/static/img/channel-img2.png" mode="" class="img" />
+					<text>{{$t('message.projectList')}}</text>
+				</view>
+				<view class="item" @click="toPath(0,'/pages/my/order/index')">
+					<image src="@/static/img/channel-img3.png" mode="" class="img" />
+					<text>{{$t('message.myOrder')}}</text>
+				</view>
+				<view class="item" @click="toPath(1,'/pages/project/project/index')">
+					<image src="@/static/img/channel-img1.png" mode="" class="img" />
+					<text>{{$t('message.projectTj')}}</text>
+				</view>
+				<view class="item" @click="toPath(0,'/pages/agent/index')">
+					<image src="@/static/img/channel-img4.png" mode="" class="img" />
+					<text>{{$t('message.agentCenter')}}</text>
+				</view>
+			</view>
+			<!-- <view class="menu bgWhite flexColumn flex-sa">
 				<view class="flex flex-sb">
 					<view class="menu-btn1 rel" @click="toPath(0,'/pages/my/order/index')">
 						<image src="@/static/img/order-btn.png" mode="" class="img"></image>
@@ -63,17 +90,17 @@
 						{{$t('message.projectList')}}
 					</view>
 				</view>
-			</view>
+			</view> -->
 			<!-- 推荐项目列表 -->
-			<view class="list-box bgWhite">
-				<view class="list-title flex flex-sb">
+			<view class="list-box">
+				<!-- <view class="list-title flex flex-sb">
 					<text class="col1 fs32 bold">{{$t('message.projectTj')}}</text>
 					<view class="fs24 mainColor flex" @click="toPath(1,'/pages/project/project/index')">
-						<u-icon name="plus-circle-fill" color="#72b5c5" style="margin-right: 5rpx;"></u-icon>
+						<u-icon name="plus-circle-fill" color="#A19878" style="margin-right: 5rpx;"></u-icon>
 						{{$t('message.more')}}
 					</view>
-				</view>
-				<Project :list="list" :isShow="true" @clickHnadle="clickHnadle"></Project>
+				</view> -->
+				<Project :list="list"  :isShow="true" @clickHnadle="clickHnadle"></Project>
 			</view>
 		</view>
 		<!-- 公告弹窗 -->
@@ -93,6 +120,7 @@
 				</view>
 			</view>
 		</uni-popup>
+		<UpdateAppModal />
 	</view>
 </template>
 
@@ -105,9 +133,11 @@
 		getListNotice
 	} from "@/common/js/http.api.js"
 	import Project from '@/components/projectList/projectList.vue'
+	import UpdateAppModal from '@/components/updateAppModal/index'
 	export default {
 		components: {
-			Project
+			Project,
+			UpdateAppModal
 		},
 		data() {
 			return {
@@ -242,6 +272,9 @@
 </script>
 
 <style scoped lang="scss">
+  .word-b{
+   /* /deep/ .*/
+  }
 	.hid {
 		height: 98vh;
 		overflow: hidden;
@@ -249,15 +282,7 @@
 
 	.header-img {
 		width: 100%;
-		height: 530rpx;
-		/* #ifdef APP-PLUS */
-		top: 0;
-		/* #endif */
-		/* #ifdef H5 */
-		top: -50rpx;
-		/* #endif */
-		left: 0;
-		z-index: 9;
+		height: 192px;
 	}
 
 	.header-info {
@@ -303,7 +328,7 @@
 		/* #endif */
 		/* #ifdef H5 */
 		padding: 20rpx 30rpx 130rpx 30rpx;
-		top: 230rpx;
+		top: 280rpx;
 		/* #endif */
 		box-sizing: border-box;
 		z-index: 10;
@@ -411,4 +436,25 @@
 		margin-top: 10rpx;
 		line-height: 40rpx;
 	}
+	.channel{
+		display: flex;
+		justify-content: space-between;
+		background-color: #fff;
+		border-radius: 16rpx;
+		padding: 20rpx 36rpx;
+		margin-top: 26rpx;
+		margin-bottom: 26rpx;
+		.item{
+			display: flex;
+			flex-direction: column;
+			font-size: 24rpx;
+			color: #979797;
+			.img{
+				width: 96rpx;
+				height: 96rpx;
+				margin-bottom: 20rpx;
+			}
+		}
+	}
+	
 </style>

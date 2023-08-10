@@ -1,9 +1,7 @@
 <template>
-	<view class="box">
+	<view class="box setting-container">
 		<view class="header-box fixed">
-			<image src="@/static/img/agent-ban.png" class="header-ban img"></image>
-			<u-navbar leftIconColor="#fff" :title="$t('message.set')" bgColor="rgba(255,255,255,.0)"
-				:titleStyle="{color: '#fff'}" @leftClick="back"></u-navbar>
+			<u-navbar :title="$t('message.set')" bgColor="rgba(255,255,255,.0)" @leftClick="back"></u-navbar>
 		</view>
 		<view class="my-main">
 			<view class="user-ul bgWhite">
@@ -274,15 +272,13 @@
 
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+	.setting-container{
+		background: url('@/static/img/notice-bg.png') no-repeat;
+		background-size: 100% 100%;
+		height: 100vh;
+	}
 	.my-main {
-		width: 100vw;
-		height: calc(100vh - 500rpx);
-		/* #ifdef APP-PLUS */
-		margin-top: 280rpx;
-		/* #endif */
-		/* #ifdef H5 */
-		margin-top: 230rpx;
-		/* #endif */
+		margin-top: 80rpx;
 		padding: 30rpx;
 		box-sizing: border-box;
 	}
@@ -301,7 +297,7 @@
 	}
 
 	.user-li+.user-li {
-		border-top: 4rpx solid #edf7f9;
+		border-top: 4rpx solid #F2F2F2;
 	}
 
 	.input {

@@ -1,11 +1,10 @@
 <template>
 	<view class="box">
 		<view class="header-box fixed">
-			<image src="@/static/img/agent-ban.png" class="img"></image>
-			<u-navbar leftIconColor="#fff" :title="$t('message.bank')" bgColor="rgba(255,255,255,.0)" :titleStyle="{color: '#fff'}"
+			<u-navbar bgColor="rgba(255,255,255)" 
 				@leftClick="back"></u-navbar>
 		</view>
-		<view class="login-box abs" v-if="vuex_user.withMan && vuex_user.withName && vuex_user.withCount && vuex_user.withAddress">
+		<view class="login-box" v-if="vuex_user.withMan && vuex_user.withName && vuex_user.withCount && vuex_user.withAddress">
 			<view class="bank-box">
 				<view class="flex flex-sb fs30 colf" style="margin-bottom: 10rpx;">
 					<text>{{vuex_user.withName}}</text>
@@ -19,27 +18,28 @@
 				*{{$t('message.rebind')}}, {{$t('message.contact')}}
 			</view>
 		</view>
-		<view class="login-box abs" v-else>
+		<view class="login-box" v-else>
+			<view class="title">{{$t('message.addBank')}}</view>
 			<view class="login-from bgWhite">
 				<!-- 表单 -->
-				<u-form labelPosition="left" :model="userInfo" :rules="rules" ref="form" :errorType="errorType" labelWidth="100">
-					<u-form-item :label="$t('message.withMan')" prop="withMan" borderBottom class="form-item">
+				<u-form :model="userInfo" :rules="rules" ref="form" :errorType="errorType">
+					<u-form-item prop="withMan" borderBottom class="form-item">
 						<u-input :clearable="true" v-model="userInfo.withMan" border="none" :placeholder="$t('message.withMan')"
 							:placeholderStyle="{color: '#999'}"></u-input>
 					</u-form-item>
-					<u-form-item :label="$t('message.withName')" prop="withName" borderBottom class="form-item">
+					<u-form-item prop="withName" borderBottom class="form-item">
 						<u-input :clearable="true" v-model="userInfo.withName" border="none" :placeholder="$t('message.withName')"
 							:placeholderStyle="{color: '#999'}"></u-input>
 					</u-form-item>
-					<u-form-item :label="$t('message.openBank')" prop="openBank" borderBottom class="form-item">
+					<u-form-item prop="openBank" borderBottom class="form-item">
 						<u-input :clearable="true" v-model="userInfo.openBank" border="none"
 							:placeholder="$t('message.openBank')" :placeholderStyle="{color: '#999'}"></u-input>
 					</u-form-item>
-					<u-form-item :label="$t('message.withCount')" prop="withCount" borderBottom class="form-item">
+					<u-form-item prop="withCount" borderBottom class="form-item">
 						<u-input :clearable="true" v-model="userInfo.withCount" border="none" :placeholder="$t('message.withCount')"
 							:placeholderStyle="{color: '#999'}"></u-input>
 					</u-form-item>
-					<u-form-item :label="$t('message.bankCount')" prop="count" borderBottom class="form-item">
+					<u-form-item prop="count" borderBottom class="form-item">
 						<u-input :clearable="true" v-model="userInfo.count" border="none"
 							:placeholder="$t('message.bankCount')" :placeholderStyle="{color: '#999'}"></u-input>
 					</u-form-item>
@@ -212,6 +212,14 @@
 		padding: 0 30rpx;
 		box-sizing: border-box;
 		z-index: 99;
+		.title{
+			font-family: Open Sans;
+			font-size: 40rpx;
+			font-weight: 600;
+			color: #333;
+			margin-top: 150rpx;
+			margin-bottom: 32rpx;
+		}
 	}
 	
 	.bank-box {
@@ -224,10 +232,8 @@
 	}
 	
 	.login-from {
-		width: 100%;
-		min-height: 50vh;
-		border-radius: 20rpx;
-		padding: 60rpx;
+		border-radius: 16rpx;
+		padding: 20rpx;
 		box-sizing: border-box;
 	}
 	.form-item {
@@ -235,7 +241,8 @@
 	}
 	.btn {
 		width: 70vw;
-		background: #24abcc;
+		background: #86784B;
 		margin: 100rpx auto 50rpx auto;
+		border-radius: 16rpx;
 	}
 </style>

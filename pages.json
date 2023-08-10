@@ -122,7 +122,9 @@
 	},{
 		"path": "pages/else/companyIntro",
 		"style": {
-			"navigationBarTitleText": "跳转外链"
+			"navigationBarTitleText": "公司简介",
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white"
 		}
 	},{
 		"path": "pages/notice/noticeList/index",
@@ -152,7 +154,86 @@
 			"navigationStyle": "custom",
 			"navigationBarTextStyle": "white"
 		}
-	}],
+	},
+	{
+		"path": "pages/else/withdrawal",
+		"style": {
+			"navigationBarTitleText": "提现",
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white"
+		}
+	}
+        ,{
+            "path" : "pages/downloadApp/downloadApp/downloadApp",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "下载App",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+            }
+            
+        },
+		{
+            "path" : "pages/sharingInvitation/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "分享邀请",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+            }
+            
+        },
+		{
+            "path" : "pages/else/resetPassword",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "重置密码",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+            }
+            
+        },
+		{
+            "path" : "pages/my/transactionPassword/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设置交易密码",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+            }
+            
+        },
+		{
+            "path" : "pages/my/transactionPasswordCode/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设置交易密码发送验证码",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+            }
+            
+        },
+		{
+            "path" : "pages/my/transactionPasswordUpdate/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设置交易密码修改",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+            }
+            
+        },
+		{
+            "path" : "pages/else/notCertified",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "未认证",
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "香港雅太医疗美容医院",
@@ -163,30 +244,30 @@
 		}
 	},
 	"tabBar": {
-		"color": "#333",
-		"selectedColor": "#72b5c5",
+		"color": "#C4C4C4",
+		"selectedColor": "#86784B",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"position": "bottom",
 		"list": [{
 			"pagePath": "pages/home/home/index",
-			"iconPath": "static/tab/home.png",
-			"selectedIconPath": "static/tab/home-active.png",
+			"iconPath": "static/tab/home.svg",
+			"selectedIconPath": "static/tab/home-active.svg",
 			"text": "首页"
 		}, {
 			"pagePath": "pages/project/project/index",
-			"iconPath": "static/tab/project.png",
-			"selectedIconPath": "static/tab/project-active.png",
+			"iconPath": "static/tab/project.svg",
+			"selectedIconPath": "static/tab/project-active.svg",
 			"text": "项目"
 		}, {
 			"pagePath": "pages/chat/chat/index",
-			"iconPath": "static/tab/chat.png",
-			"selectedIconPath": "static/tab/chat-active.png",
+			"iconPath": "static/tab/chat.svg",
+			"selectedIconPath": "static/tab/chat-active.svg",
 			"text": "客服"
 		}, {
 			"pagePath": "pages/my/my/index",
-			"iconPath": "static/tab/my.png",
-			"selectedIconPath": "static/tab/my-active.png",
+			"iconPath": "static/tab/my.svg",
+			"selectedIconPath": "static/tab/my-active.svg",
 			"text": "我的"
 		}]
 	}

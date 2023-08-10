@@ -1,37 +1,31 @@
 <template>
-	<view class="box rel">
-		<image src="@/static/img/login-ban.png" mode="" class="login-img abs"></image>
-		<u-navbar leftIconColor="#fff" :title="$t('message.forgot')" bgColor="rgba(255,255,255,.0)"
-			:titleStyle="{color: '#fff'}" :placeholder="true" @leftClick="back"></u-navbar>
-		<view class="info abs flexColumn">
-			<text class="app-name">{{$t('message.appName')}}</text>
-			<text class="mechanism">{{$t('message.mechanism')}}</text>
-			<view class="flex fs30">
-				<image src="@/static/img/login-icon.png" mode="" class="login-icon"></image>
-				{{$t('message.aim')}}
-			</view>
-		</view>
-		<view class="login-box abs">
-			<view class="login-from bgWhite">
-				<view class="title col1">
-					{{$t('message.forgot')}}
-				</view>
+	<view class="login-container">
+		<image src="@/static/img/close-icon.png" class="common-close" @click="$router.go(-1)" />
+		<view class="login-box">
+			<text class="app-name">{{$t('message.forgot')}}</text>
+			<view class="login-from">
 				<!-- 表单 -->
 				<u-form labelPosition="left" :model="userInfo" :rules="rules" ref="form" :errorType="errorType">
-					<u-form-item prop="account" borderBottom class="form-item">
-						<u-input prefixIcon="account" :clearable="true" prefixIconStyle="font-size: 30px;color: #2199b6"
-							v-model="userInfo.account" border="none" :placeholder="$t('message.account')"
-							:placeholderStyle="{color: '#333'}"></u-input>
+					<u-form-item prop="account" class="form-item">
+						<u-input 
+							:clearable="true"
+							v-model="userInfo.account" 
+							:placeholder="$t('message.account')"
+							:placeholderStyle="{color: '#333'}" />
 					</u-form-item>
-					<u-form-item prop="pwd" borderBottom class="form-item">
-						<u-input prefixIcon="lock" :clearable="true" prefixIconStyle="font-size: 30px;color: #2199b6"
-							v-model="userInfo.pwd" border="none" :placeholder="$t('message.pwd')"
-							:placeholderStyle="{color: '#333'}"></u-input>
+					<u-form-item prop="pwd" class="form-item">
+						<u-input 
+							:clearable="true"
+							v-model="userInfo.pwd" 
+							:placeholder="$t('message.pwd')"
+							:placeholderStyle="{color: '#333'}" />
 					</u-form-item>
-					<u-form-item prop="password" borderBottom class="form-item">
-						<u-input prefixIcon="lock-fill" :clearable="true"
-							prefixIconStyle="font-size: 30px;color: #2199b6" v-model="userInfo.password" border="none"
-							:placeholder="$t('message.password')" :placeholderStyle="{color: '#333'}"></u-input>
+					<u-form-item prop="password" class="form-item">
+						<u-input 
+							:clearable="true"
+							v-model="userInfo.password"
+							:placeholder="$t('message.password')" 
+							:placeholderStyle="{color: '#333'}" />
 					</u-form-item>
 				</u-form>
 				<view class="btn" @click="submit">

@@ -2,7 +2,7 @@
 	<view class="box">
 		<view class="header-box fixed">
 			<view class="nav-box rel">
-				<image src="@/static/img/other-ban.png" class="header-ban img abs"></image>
+				<image src="@/static/img/other-ban.jpg" class="header-ban img abs"></image>
 				<view class="nav abs">
 					<u-navbar leftIconColor="#fff" :title="$t('message.order')" bgColor="rgba(255,255,255,.0)"
 						:titleStyle="titleStyle" @leftClick="back"></u-navbar>
@@ -18,7 +18,7 @@
 		<view class="project-main">
 			<view class="project-box bottom-r bgWhite">
 				<!-- 项目列表 -->
-				<Project :list="list" :isShow="false" :isOrder="true" :isMore="true" :nextPage="nextPage"></Project>
+				<Project id="myOrder" :list="list" :isShow="false" :isOrder="true" :isMore="true" :nextPage="nextPage"></Project>
 			</view>
 		</view>
 	</view>
@@ -148,8 +148,32 @@
 	}
 </script>
 
+
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+  #myOrder{
+    /deep/ .bgWhite{
+      background:  #A19878;
+    }
+    /deep/ .title {
+      color: #fff !important;
+    }
+    /deep/ .li-main{
+        margin: 0;
+    }
+    /deep/ .content {
+      color: #fff;
+    }
+    /deep/ .li-info {
+      min-height: 50px;
+    }
+    /deep/ .col9 {
+      color: #fff;
+    }
+  }
+
+
+
 	.header-box {
 		/* #ifdef APP-PLUS */
 		height: 304rpx;
@@ -168,7 +192,7 @@
 		height: 230rpx;
 		/* #endif */
 	}
-	
+
 	/* #ifdef H5 */
 	.header-ban {
 		height: 280rpx;

@@ -1,53 +1,43 @@
 <template>
-	<view class="box rel">
-		<image src="@/static/img/login-ban.png" mode="" class="login-img abs"></image>
-		<u-navbar leftIconColor="#fff" :title="$t('message.registerText')" bgColor="rgba(255,255,255,.0)"
-			:titleStyle="{color: '#fff'}" :placeholder="true" @leftClick="back"></u-navbar>
-		<view class="info abs flexColumn">
-			<text class="app-name">{{$t('message.appName')}}</text>
-			<text class="mechanism">{{$t('message.mechanism')}}</text>
-			<view class="flex fs30">
-				<image src="@/static/img/login-icon.png" mode="" class="login-icon"></image>
-				{{$t('message.aim')}}
-			</view>
-		</view>
-		<view class="login-box abs">
-			<view class="login-from bgWhite">
+	<view class="login-container">
+		<view class="login-box">
+			<text class="app-name">{{ $t('message.registerName') }}</text> 
+			<view class="login-from">
 				<view class="title col1">
 					{{$t('message.register')}}
 				</view>
 				<!-- 表单 -->
 				<u-form labelPosition="left" :model="userInfo" :rules="rules" ref="form" :errorType="errorType">
-					<u-form-item prop="account" borderBottom class="form-item">
-						<u-input prefixIcon="account" :clearable="true" prefixIconStyle="font-size: 30px;color: #2199b6"
-							v-model="userInfo.account" border="none" :placeholder="$t('message.account')"
-							:placeholderStyle="{color: '#333'}"></u-input>
+					<u-form-item prop="account" class="form-item">
+						<u-input prefixIcon="account" :clearable="true"
+							v-model="userInfo.account" :placeholder="$t('message.account')"
+							placeholderStyle="{color: '#333'}"></u-input>
 					</u-form-item>
-					<u-form-item prop="code" borderBottom class="form-item">
-						<u-input prefixIcon="tags" :clearable="true" prefixIconStyle="font-size: 30px;color: #2199b6"
-							v-model="userInfo.randomCode" border="none" :placeholder="$t('message.code')"
-							:placeholderStyle="{color: '#333'}">
+					<u-form-item prop="code" class="form-item">
+						<u-input prefixIcon="tags" :clearable="true"
+							v-model="userInfo.randomCode" :placeholder="$t('message.code')"
+							placeholderStyle="{color: '#333'}">
 								<template slot="suffix">
 									<u-code ref="uCode" @change="codeChange" :start-text="startText" 
 									 :change-text="changeText" :end-text="endText" :seconds="seconds"></u-code>
-									<u-button @tap="getCode" :text="tips" type="success" size="mini"></u-button>
+									 <text class="send-code" @tap="getCode">{{tips}}</text>
 								</template>
 							</u-input>
 					</u-form-item>
-					<u-form-item prop="pwd" borderBottom class="form-item">
-						<u-input prefixIcon="lock" :clearable="true" prefixIconStyle="font-size: 30px;color: #2199b6"
-							v-model="userInfo.pwd" border="none" :placeholder="$t('message.pwd')"
-							:placeholderStyle="{color: '#333'}"></u-input>
+					<u-form-item prop="pwd" class="form-item">
+						<u-input prefixIcon="lock" :clearable="true"
+							v-model="userInfo.pwd" :placeholder="$t('message.pwd')"
+							placeholderStyle="{color: '#333'}"></u-input>
 					</u-form-item>
-					<u-form-item prop="password" borderBottom class="form-item">
+					<u-form-item prop="password" class="form-item">
 						<u-input prefixIcon="lock-fill" :clearable="true"
-							prefixIconStyle="font-size: 30px;color: #2199b6" v-model="userInfo.password" border="none"
-							:placeholder="$t('message.password')" :placeholderStyle="{color: '#333'}"></u-input>
+							v-model="userInfo.password"
+							:placeholder="$t('message.password')" placeholderStyle="{color: '#333'}"></u-input>
 					</u-form-item>
-					<u-form-item borderBottom class="form-item">
-						<u-input prefixIcon="man-add" :clearable="true" prefixIconStyle="font-size: 30px;color: #2199b6"
-							v-model="userInfo.inviter" border="none" :placeholder="$t('message.inviter')"
-							:placeholderStyle="{color: '#333'}"></u-input>
+					<u-form-item class="form-item">
+						<u-input prefixIcon="man-add" :clearable="true"
+							v-model="userInfo.inviter" :placeholder="$t('message.inviter')"
+							placeholderStyle="{color: '#333'}"></u-input>
 					</u-form-item>
 				</u-form>
 				<view class="btn" @click="submit">

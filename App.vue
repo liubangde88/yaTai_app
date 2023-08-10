@@ -39,7 +39,7 @@
 
 	// 设置整个项目的背景色
 	page {
-		background-color: #edf7f9;
+		background-color: #f9f9f9;
 		width: 100vw;
 	}
 
@@ -48,5 +48,44 @@
 		font-size: 14px;
 		color: #333;
 		padding: 10px;
+	}
+	.u-form-item__body__right__message{
+		margin-left: 0 !important;
+	}
+	.home-search{
+		.u-search{
+			.u-search__content{
+				border-radius: 8px !important;
+				background-color: #fff !important;
+				input{
+					background-color: #fff !important;
+					&::placeholder, &::-webkit-input-placeholder{
+					color: #B8BBC3 !important;
+					}
+				}
+			}
+		}
+	}
+	.product-search{
+		.u-search{
+			.u-search__content{
+				border-radius: 32px !important;
+				background-color: #fff !important;
+				box-shadow: 0px 0px 5px 0px #E8E1D9 inset;
+				input{
+					background-color: transparent !important;
+					&::placeholder, &::-webkit-input-placeholder{
+					color: #B8BBC3 !important;
+					}
+				}
+			}
+		}
+	}
+	.common-close{
+		width: 40rpx;
+		height: 40rpx;
+		position: fixed;
+		top: 40rpx;
+		left: 40rpx;
 	}
 </style>

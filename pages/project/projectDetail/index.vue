@@ -4,34 +4,60 @@
 			<u-navbar leftIconColor="#333" :title="$t('message.detail')" bgColor="rgba(255,255,255,.1)"
 				:titleStyle="{color: '#333'}" @leftClick="back"></u-navbar>
 		</view>
-		<image src="@/static/img/detail-ban.png" class="header-ban abs img"></image>
-		<view class="main abs">
-			<u-swiper :list="banners" radius="6" height="400rpx" indicator indicatorMode="line" circular
-				keyName="photoUrl"></u-swiper>
-			<view class="info bgWhite">
-				<view class="title col1">{{info.pname}}</view>
-				<view class="tips">
-					<view class="text fs26 col6">
-						{{info.pcontent}}
+		<view class="main">
+			<view class="bgWhite doctor">
+				<view class="info">
+					<view class="left flexColumn">
+						<image :src="info.headImg || baseImg" mode="aspectFill" class="avatar"></image>
 					</view>
-					<view class="text fs26 col6">
-						<!-- 项目金额 -->
-						{{$t('message.money')}}： <span style="color: red;">￥{{info.pprice || 0}}</span>
+					<view style="max-width: 200px;">
+						<text class="col1 fs28 word-b">{{info.dname}}</text>
+						<view class="mag-b fs26 col6 line-one">
+							{{info.pcontent}}
+						</view>
 					</view>
-					<view class="fs26 col6">
-						<!-- 项目分成 -->
-						{{$t('message.percentage')}}： <span style="color: #4691cb;">{{info.agentPercent || 0}}%</span>
+					<view class="li-right flex fs24 appointment" @click.stop="click(info.id)">
+						{{$t('message.appointment')}}
 					</view>
 				</view>
-
-				<view class="li-time fs24 col9">
-					<!-- 发布日期 -->
-					{{$t('message.releaseDate')}}：{{info.createTime}}
+				<view class="li-main flex">
+					<view>
+						<view class="title">{{$t('message.pName')}}</view>
+						<view class="content">
+							{{info.pname}}
+						</view>
+					</view>
+					<!-- 项目金额 -->
+					<view>
+						<view class="title">{{$t('message.money')}}</view>
+						<view class="content">
+							<span>￥{{info.pprice || 0}}</span><span>（HK$）</span>
+						</view>
+					</view>
+					<view class="mag-b fs26 col6">
+						<view class="title">{{$t('message.percentage')}}</view>
+						<view class="content">
+							<span>{{info.agentPercent || 0}}%</span>
+						</view>
+					</view>
 				</view>
+				<view class="li-time fs24 col9 flex release-date">
+					<view>{{$t('message.releaseDate')}}</view>
+					<view>{{info.upTime}}</view>
+				</view>
+			</view>
+			<view class="detail">
+				<view class="title">
+					<image src="@/static/img/doctor-detail-icon.png" mode="aspectFill" class="img"></image>
+					<text>{{$t('message.productRecDoctor')}}</text>
+				</view>
+				<!-- <view class="more">
+					<image src="@/static/img/doctor-detail-more.png" mode="aspectFill" class="img"></image>
+					<text>{{$t('message.more')}}</text>
+				</view> -->
 			</view>
 			<view class="info bgWhite">
 				<!-- 项目医生介绍 -->
-				<view class="title col1">{{$t('message.docIntro')}}</view>
 				<view class="dor-info flex">
 					<view class="left flexColumn">
 						<image :src="info.headImg || baseImg" mode="aspectFill" class="avatar"></image>
@@ -44,10 +70,12 @@
 						<text class="text">{{$t('message.offices')}}：<span class="col9">{{info.officeName}}</span></text>
 						<!-- 擅长 -->
 						<text>{{$t('message.good')}}：<span class="col9">{{info.goodAt}}</span></text>
-						<!-- 详细介绍 -->
-						<text class="text" style="margin-top: 30rpx;" >{{$t('message.detailIntro')}}：</text>
-						<text class="col9">{{info.detail}}</text>
 					</view>
+				</view>
+				<view class="doctor-desc">
+					<!-- 详细介绍 -->
+					<view class="text" >{{$t('message.detailIntro')}}：</view>
+					<text class="col9">{{info.detail}}</text>
 				</view>
 			</view>
 			<!-- 项目详情 -->
@@ -60,12 +88,12 @@
 		</view>
 		<view class="btn-main fixed flex bgWhite">
 			<view class="btn-icon flexColumn fs24 col6" @click="toPath('/pages/home/home/index')">
-				<u-icon name="home" color="#666" size="24"></u-icon>
+				<image src="@/static/tab/home.png" mode="aspectFill" class="img"></image>
 				<!-- 首页 -->
 				{{$t('tabbar.home')}}
 			</view>
 			<view class="btn-icon flexColumn fs24 col6" @click="toPath('/pages/chat/chat/index')">
-				<u-icon name="kefu-ermai" color="#666" size="24"></u-icon>
+				<image src="@/static/tab/chat.png" mode="aspectFill" class="img"></image>
 				<!-- 客服 -->
 				{{$t('tabbar.chat')}}
 			</view>
@@ -147,6 +175,88 @@
 </script>
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+	.appointment {
+		background: linear-gradient(-45deg, #A19878, #A19878);
+		width: 140rpx;
+		height: 50rpx;
+		border-radius: 40rpx;
+		text-align: center;
+		color: #fff;
+		justify-content: center;
+
+	}
+	.doctor{
+		padding-left: 34rpx;
+		padding-right: 34rpx;
+		padding-bottom: 22rpx;
+		margin-top: 50rpx;
+		border-radius: 16rpx;
+		.info{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.avatar{
+				width: 100rpx;
+				height: 100rpx;
+				border: 2px solid #A19878;
+			}
+		}
+		.li-main {
+			justify-content: space-between;
+			text-align: center;
+			margin-top: 10rpx;
+			margin-bottom: 30rpx;
+		}
+		.li-main .title{
+			font-size: 12px;
+			color: #979797;
+		}
+		.li-main .content{
+			font-size: 16px;
+			color: #000000;
+		}
+	.release-date{
+		justify-content: space-between;
+		border-top: 1px solid rgba(0, 0, 0, 0.05);
+		margin-left: -17px;
+		margin-right: -17px;
+		padding-left: 17px;
+		padding-right: 17px;
+		padding-top: 10px;
+	}
+	}
+	.detail{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 30rpx;
+		margin-top: 30rpx;
+		.title, .more{
+			display: flex;
+			align-items: center;
+			gap: 20rpx;
+			.img{
+				width: 40rpx;
+				height: 40rpx;
+			}
+		}
+		.title{
+			font-family: PingFang HK;
+			font-size: 30rpx;
+			font-weight: 600;
+			color: #000;
+		}
+		.more{
+			font-family: PingFang HK;
+			font-size: 26rpx;
+			color: #B8BBC3;
+		}
+	}
+	.doctor-desc{
+		border-top: 1px solid #0000000D;
+		margin-top: 20rpx;
+		padding: 40rpx;
+	}
 	.header-box {
 		/* height: 100rpx; */
 		z-index: 999;
@@ -172,20 +282,6 @@
 		left: 0;
 		z-index: 80;
 		box-sizing: border-box;
-	}
-
-	.info {
-		width: 100%;
-		border-radius: 20rpx;
-		padding: 20rpx;
-		box-sizing: border-box;
-		margin-top: 30rpx;
-	}
-
-	.title {
-		font-size: 35rpx;
-		border-bottom: 4rpx solid #edf7f9;
-		padding-bottom: 20rpx;
 	}
 
 	.tips {
@@ -239,19 +335,21 @@
 		border-top: 1rpx solid rgba(0, 0, 0, .3);
 		padding-right: 30rpx;
 		box-sizing: border-box;
+		.btn{
+			flex: 0 0 288rpx;
+			background: #A19878;
+			margin-left: auto;
+		}
 	}
 	.btn-icon {
 		width: 150rpx;
 		height: 80rpx;
 		justify-content: space-between;
 		align-items: center;
-	}
-	.btn-icon + .btn-icon {
-		border-left: 1px solid #edf7f9;
-	}
-	.btn {
-		flex: 1;
-		background: #69d9ec;
+		.img{
+			width: 36rpx;
+			height: 38rpx;
+		}
 	}
 	.content {
 		padding: 20rpx 0;

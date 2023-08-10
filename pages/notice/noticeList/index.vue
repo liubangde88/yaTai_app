@@ -1,17 +1,22 @@
 <template>
-	<view class="box">
-		<view class="header-box fixed">
-			<image src="@/static/img/agent-ban.png" class="header-ban img"></image>
-			<u-navbar leftIconColor="#fff" :title="$t('message.noticeList')" bgColor="rgba(255,255,255,.0)"
-				:titleStyle="{color: '#fff'}" @leftClick="back"></u-navbar>
+	<view class="box notic-container">
+		<view class="fixed" style="z-index: 999;">
+			<u-navbar leftIconColor="#333" :title="$t('message.noticeList')" bgColor="rgba(255,255,255,.1)"
+				:titleStyle="{color: '#333'}" @leftClick="back"></u-navbar>
 		</view>
 		<view class="notice-main">
-			<view class="notice-ul flex flex-cen bgWhite" style="height: 500rpx;" v-if="list.length == 0">
-				<u-empty mode="list" :text="$t('message.emptyText')"></u-empty>
-			</view>
+			<NotData v-if="list.length == 0" />
 			<view class="notice-ul" v-else>
 				<view class="notice-li bgWhite flexColumn" v-for="(item,index) in list" :key="index" @click="clickHandle(item.id)">
-					<view class="title fs32 col1">{{item.title}}</view>
+					<view class="title fs32 col1">
+						<view>
+							{{item.title}}
+						</view>
+						<image src="@/static/img/right-arrow.png" :class="['img', item.id === info.id ? 'active' : '']"></image>
+					</view>
+					<view class="content" v-if="item.id === info.id">
+						{{info.content}}
+					</view>
 					<text class="fs28 col9">{{item.createTime}}</text>
 				</view>
 				<!-- 加载更多 -->
@@ -24,15 +29,21 @@
 
 <script>
 	import {
-		getListNotice
-	} from "@/common/js/http.api.js"
+		getListNotice,
+		getNoticeDetail
+	} from "@/common/js/http.api.js";
+	import NotData from '@/components/notData/index.vue'; 
 	export default {
+		components: {
+			NotData
+		},
 		data() {
 			return {
 				list: [],
 				page: 1,
 				pagesize: 10,
 				nextPage: false, //是否加载
+				info: {},
 			}
 		},
 		computed: {
@@ -61,9 +72,19 @@
 		},
 		methods: {
 			clickHandle(id) {
-				uni.navigateTo({
-					url: '/pages/notice/noticeDtail/index?id=' + id
+				if(this.info.id === id) {
+					this.info = {};
+					return;
+				}
+				getNoticeDetail({
+					noticeId: id
+				}).then(res => {
+					res.active = true;
+					this.info = res.notice;
 				})
+				// uni.navigateTo({
+				// 	url: '/pages/notice/noticeDtail/index?id=' + id
+				// })
 			},
 			// 获取公告列表
 			getListNotice() {
@@ -88,15 +109,20 @@
 
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+	.notic-container{
+		background: url('@/static/img/notice-bg.png') no-repeat;
+		background-size: 100% 100%;
+		height: 100vh;
+		.content{
+			font-family: PingFang HK;
+			font-size: 26rpx;
+			font-weight: 400;
+			color: #979797;
+			line-height: 1.5em;
+		}
+	}
 	.notice-main {
-		width: 100vw;
-		min-height: calc(100vh - 300rpx);
-		/* #ifdef APP-PLUS */
-		margin-top: 280rpx;
-		/* #endif */
-		/* #ifdef H5 */
-		margin-top: 230rpx;
-		/* #endif */
+		margin-top: 80rpx;
 		padding: 30rpx;
 		box-sizing: border-box;
 	}
@@ -110,5 +136,16 @@
 	}
 	.title {
 		margin-bottom: 10rpx;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.img{
+			width: 12rpx;
+			height: 20rpx;
+			transition: rotate 0.2s;
+			&.active{
+				transform: rotate(90deg);
+			}
+		}
 	}
 </style>

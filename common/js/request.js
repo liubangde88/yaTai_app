@@ -9,9 +9,10 @@ baseURL = setting.IS_DEV ? setting.DEV_URL : setting.PRO_URL
 //#endif
 //#ifdef H5
 let str = window.location.href.split("h5")[0] + 'beauty-manager'
-baseURL = setting.IS_DEV ? '/api' : str
+baseURL = setting.IS_DEV ? setting.DEV_URL : str
 //#endif
-
+ 
+console.log(baseURL)
 export default {
 	config: {
 		baseURL,
@@ -113,7 +114,7 @@ export default {
 					if (res.statusCode == 200) {
 						let result = res.data;
 						let isVerifyCode = options.isVerifyCode ? false : true
-						console.log(result);
+						//console.log(result);
 						// if 与后台规定code代码进行处理数据返回
 						if (result.code == 0 || !isVerifyCode) {
 							resolve(result)

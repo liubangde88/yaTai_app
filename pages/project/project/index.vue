@@ -1,14 +1,9 @@
 <template>
 	<view class="box">
 		<view class="header-box fixed">
-			<image src="@/static/img/project-ban.png" class="header-img"></image>
+			<image src="@/static/img/home-ban.png" class="header-img"></image>
 			<view class="search-box abs">
 				<view class="info top-r bgWhite">
-					<view class="box-r">
-						<u-search :placeholder="$t('message.search')" v-model="search" :clearabled="true" :showAction="false"
-							height="80rpx" searchIconColor="#72b5c5" searchIconSize="26" placeholderColor="#333"
-							color="#333" bg-color="#eaf5f8" @change="searchHandle"></u-search>
-					</view>
 					<view class="box-r">
 						<u-tabs :list="menus" lineColor="#fff" :activeStyle="activeStyle" :inactiveStyle="inactiveStyle"
 							:itemStyle="itemStyle" @click="selecthandle"></u-tabs>
@@ -16,8 +11,22 @@
 				</view>
 			</view>
 		</view>
+		<view class="box-r product-search">
+			<u-search 
+			:placeholder="$t('message.search')" 
+			v-model="search" 
+			:clearabled="true" 
+			:showAction="false"
+			height="80rpx" 
+			searchIconColor="#86784B" 
+			searchIconSize="26" 
+			placeholderColor="#333"
+			color="#333" 
+			bg-color="#eaf5f8" 
+			@change="searchHandle" />
+		</view>
 		<view class="project-main">
-			<view class="project-box bottom-r bgWhite">
+			<view class="project-box bottom-r">
 				<Project :list="list" :isShow="true" :isMore="true" :nextPage="nextPage" @clickHnadle="clickHnadle"></Project>
 			</view>
 		</view>
@@ -40,16 +49,16 @@
 				search: '',
 				// 菜单选择中时的样式
 				activeStyle: {
-					background: '#2c8aa0',
+					background: '#86784B',
 					borderRadius: '40rpx',
-					color: '#fff',
+					color: '#FFFFFF',
 					padding: '5rpx 20rpx'
 				},
 				// 菜单非选择中时的样式
 				inactiveStyle: {
-					background: '#eaf5f8',
+					background: '#E8E1D9',
 					borderRadius: '40rpx',
-					color: '#2c8aa0',
+					color: '#86784B',
 					padding: '5rpx 20rpx'
 				},
 				// 菜单item的样式
@@ -179,14 +188,7 @@
 
 	.header-img {
 		width: 100%;
-		height: 400rpx;
-		/* #ifdef APP-PLUS */
-		top: 0;
-		/* #endif */
-		/* #ifdef H5 */
-		top: -50rpx;
-		/* #endif */
-		left: 0;
+		height: 384rpx;
 	}
 
 	.search-box {
@@ -194,26 +196,31 @@
 		top: 240rpx;
 		/* #endif */
 		/* #ifdef H5 */
-		top: 190rpx;
+		top: 300rpx;
 		/* #endif */
 		width: 100vw;
-		padding: 0 30rpx;
+		padding: 0 16rpx;
 		box-sizing: border-box;
+		box-shadow: 0px 4px 4px 0px rgba(246, 244, 241, 1);
 	}
 
 	.info {
-		height: 244rpx;
+		height: 120rpx;
+		border-radius: 16rpx;
 	}
 	
 	.project-main {
 		/* #ifdef APP-PLUS */
-		margin-top: 484rpx;
+		// margin-top: 484rpx;
 		/* #endif */
 		/* #ifdef H5 */
-		margin-top: 434rpx;
+		// margin-top: 434rpx;
 		/* #endif */
 	}
 	.project-box {
 		min-height: 50vh;
+	}
+	.product-search{
+		margin-top: 420rpx;
 	}
 </style>

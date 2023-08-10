@@ -15,6 +15,7 @@ export default {
 		releaseDate: "Release Date",
 		money: "money",
 		percentage: "percentage",
+		pName: 'Project name',
 		search: "Find Items",
 		all: "all",
 		commission: "Total Commission Amount",
@@ -126,6 +127,15 @@ export default {
 		documentNum: "certificate No",
 		attestationTips: "You have been authenticated by your real name, please contact customer service if you need to make changes.",
 		attestationTips1: "You haven't verified your real name yet. Go to Settings.",
-		attestationText: "Name bound by real-name authentication and name bound by bank card."
+		attestationText: "Name bound by real-name authentication and name bound by bank card.",
+		welcomeToLogin:"welcome to login",
+		registerName: 'register',
+		productRecDoctor: '项目推医生介绍',
+		myPageAgent: '代理',
+		myPageWallet: '钱包',
+		myPageRecharge: '充值',
+		myPageWithdrawal: '提现',
+		blank: '添加银行卡',
+		withdrawalPassword: '设置取款密码'
 	}
 }

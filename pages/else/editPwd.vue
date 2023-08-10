@@ -1,12 +1,12 @@
 <template>
-	<view class="box">
-		<view class="header-box fixed">
+	<view class="login-container">
+		<<!-- view class="header-box fixed">
 			<image src="@/static/img/other-ban.png" class="img"></image>
 			<u-navbar leftIconColor="#fff" :title="title" bgColor="rgba(255,255,255,.0)" :titleStyle="{color: '#fff'}"
 				@leftClick="back"></u-navbar>
-		</view>
-		<view class="login-box abs">
-			<view class="login-from bgWhite">
+		</view> -->
+		<view class="login-box">
+			<view class="login-from">
 				<!-- 表单 -->
 				<u-form labelPosition="left" :model="userInfo" :rules="rules" ref="form" :errorType="errorType">
 					<u-form-item prop="pwd" borderBottom class="form-item">

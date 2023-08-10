@@ -1,17 +1,28 @@
 <template>
-	<view class="box">
-		<image src="@/static/img/my-ban.png" mode="" class="my-img rel"></image>
-		<u-navbar leftIcon="" :title="$t('tabbar.me')" bgColor="rgba(255,255,255,.0)" :titleStyle="{color: '#fff'}"
-			:placeholder="true"></u-navbar>
-		<view class="user-info abs flexColumn">
+	<view class="my-container">
+		<view class="user-info">
 			<image :src="vuex_user.headImg || avatar" mode="" class="avatar"></image>
-			<text class="fs30 colf" v-if="vuex_user.id">{{vuex_user.nickName || vuex_user.mobile}}</text>
-			<text class="fs30 colf" @click="toPath('/pages/else/login',1)" v-else>{{$t('message.toLogin')}}</text>
+			<text class="colf" v-if="vuex_user.id">{{vuex_user.nickName || vuex_user.mobile}}</text>
+			<text class="colf" @click="toPath('/pages/else/login',1)" v-else>{{$t('message.toLogin')}}</text>
 		</view>
-		<view class="options abs">
+		<view class="channel">
+			<view class="item">
+				<image src="@/static/img/my-channel-img1.png" class="img" />				<view>{{$t('message.myPageAgent')}}</view>
+			</view>
+			<view class="item" @click="wallet">
+				<image src="@/static/img/my-channel-img2.png" class="img" />				<view>{{$t('message.myPageWallet')}}</view>
+			</view>
+			<view class="item">
+				<image src="@/static/img/my-channel-img3.png" class="img" />				<view>{{$t('message.myPageRecharge')}}</view>
+			</view>
+			<view class="item" @click="withdrawal">
+				<image src="@/static/img/my-channel-img4.png" class="img" />				<view>{{$t('message.myPageWithdrawal')}}</view>
+			</view>
+		</view>
+		<view class="options">
 			<view class="option-ul bgWhite">
 				<view class="options-li flex" v-for="(item,index) in options" :key="index" @click="toPath(item.path,item.type)">
-					<u-icon :name="item.icon" color="#111" size="18"></u-icon>
+					<image :src="item.icon" class="img" />
 					<text class="title flex-1 fs30 col1">{{item.name}}</text>
 					<u-icon name="arrow-right" color="#999" size="18" v-if="item.type != '3'"></u-icon>
 					<text class="fs28 col9" v-else>V1.1.9</text>
@@ -36,45 +47,46 @@
 		},
 		computed: {
 			options() {
-				let arr = [{
-						name: this.$t('message.order'),
-						icon: 'order',
-						path: '/pages/my/order/index',
-						type: '2'
-					},
-					{
-						name: this.$t('message.wallet'),
-						icon: 'rmb-circle',
-						path: '/pages/my/wallet/index',
-						type: '2'
-					},
-					{
-						name: this.$t('message.companyIntro'),
-						icon: 'file-text',
-						path: '/pages/else/companyIntro',
-						type: '4'
-					},
+				let arr = [
 					{
 						name: this.$t('message.attestation'),
-						icon: 'checkmark-circle',
+						icon: require('@/static/img/my-icon1.png'),
 						path: '/pages/else/attestation',
 						type: '2'
 					},
 					{
+						name: this.$t('message.blank'),
+						icon: require('@/static/img/my-icon2.png'),
+						path: '/pages/my/myBank/index',
+						type: '2'
+					},
+					{
+						name: this.$t('message.withdrawalPassword'),
+						icon: require('@/static/img/my-icon3.png'),
+						path: '/pages/my/transactionPassword/index',
+						type: '2'
+					},
+					{
 						name: this.$t('message.notice'),
-						icon: 'more-circle',
 						path: '/pages/notice/noticeList/index',
+						icon: require('@/static/img/my-icon5.png'),
 						type: '1'
 					},
 					{
+						name: this.$t('message.companyIntro'),
+						icon: require('@/static/img/my-icon4.png'),
+						path: '/pages/else/companyIntro',
+						type: '2'
+					},
+					{
 						name: this.$t('message.set'),
-						icon: 'setting',
+						icon: require('@/static/img/my-icon6.png'),
 						path: '/pages/else/setting',
 						type: '1'
 					},
 					{
 						name: this.$t('message.version'),
-						icon: 'level',
+						icon: require('@/static/img/my-icon7.png'),
 						path: '',
 						type: '3'
 					}
@@ -101,6 +113,16 @@
 					url
 				})
 			},
+			wallet() {
+				uni.navigateTo({
+					url: '/pages/my/wallet/index'
+				})
+			},
+			withdrawal() {
+				uni.navigateTo({
+					url: '/pages/else/withdrawal'
+				})
+			},
 			// 退出
 			logOut() {
 				let {
@@ -120,6 +142,30 @@
 </script>
 
 <style scoped lang="scss">
+	.my-container{
+		background: url('@/static/img/my-bg.png') no-repeat;
+		background-size: 100%;
+		height: 100vh;
+		.channel{
+			display: flex;
+			justify-content: space-between;
+			margin-left: 32rpx;
+			margin-right: 32rpx;
+			box-shadow: 0px 4px 4px 0px #C9D6F126;
+			background-color: rgba(255, 255, 255, 0.9);
+			padding: 34rpx 60rpx;
+			border-radius: 16rpx;
+			margin-top: 60rpx;
+			margin-bottom: 30rpx;
+			.item{
+				text-align: center;
+			}
+			.img{
+				width: 80rpx;
+				height: 80rpx;
+			}
+		}
+	}
 	.my-img {
 		width: 100vw;
 		/* #ifdef APP-PLUS */
@@ -131,22 +177,22 @@
 	}
 
 	.user-info {
-		width: 100vw;
-		height: 300rpx;
-		/* #ifdef APP-PLUS */
-		top: 180rpx;
-		/* #endif */
-		/* #ifdef H5 */
-		top: 130rpx;
-		/* #endif */
-		left: 0;
+		display: flex;
+		gap: 40rpx;
 		align-items: center;
-		justify-content: center;
+		margin-left: 44rpx;
+		font-family: Open Sans;
+		font-size: 40rpx;
+		font-weight: 600;
+		line-height: 27px;
+		letter-spacing: 0em;
+		text-align: left;
+		padding-top: 140rpx;
 	}
 
 	.avatar {
-		width: 180rpx;
-		height: 180rpx;
+		width: 140rpx;
+		height: 140rpx;
 		border-radius: 90rpx;
 		margin-bottom: 20rpx;
 		border: 1px solid #fff;
@@ -176,10 +222,15 @@
 
 	.options-li {
 		height: 120rpx;
+		.img{
+			width: 32rpx;
+			height: 32rpx;
+			margin-right: 36rpx;
+		}
 	}
 
 	.options-li+.options-li {
-		border-top: 4rpx solid #edf7f9;
+		border-top: 4rpx solid #F6F7FD;
 	}
 
 	.title {
