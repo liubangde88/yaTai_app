@@ -30,11 +30,11 @@
 					<!-- 项目金额 -->
 					<view>
 						<view class="title">{{$t('message.money')}}</view>
-						<view class="content">
+						<view class="content" style="text-align: left">
 							<span>￥{{info.pprice || 0}}</span><span>（HK$）</span>
 						</view>
 					</view>
-					<view class="mag-b fs26 col6">
+					<view class="mag-b fs26 col6" id="caonimadebi">
 						<view class="title">{{$t('message.percentage')}}</view>
 						<view class="content">
 							<span>{{info.agentPercent || 0}}%</span>
@@ -175,6 +175,12 @@
 </script>
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+  #caonimadebi {
+    /deep/ .content {
+      width: 100px;
+      text-align: left;
+    }
+  }
 	.appointment {
 		background: linear-gradient(-45deg, #A19878, #A19878);
 		width: 140rpx;
@@ -210,10 +216,17 @@
 		.li-main .title{
 			font-size: 12px;
 			color: #979797;
+      text-align: left;
 		}
 		.li-main .content{
-			font-size: 16px;
+			font-size: 12px;
 			color: #000000;
+      font-weight: bolder;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+      width: 130px;
 		}
 	.release-date{
 		justify-content: space-between;
