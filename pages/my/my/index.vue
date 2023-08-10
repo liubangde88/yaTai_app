@@ -6,17 +6,21 @@
 			<text class="colf" @click="toPath('/pages/else/login',1)" v-else>{{$t('message.toLogin')}}</text>
 		</view>
 		<view class="channel">
-			<view class="item">
-				<image src="@/static/img/my-channel-img1.png" class="img" />				<view>{{$t('message.myPageAgent')}}</view>
+			<view class="item" @click="member">
+				<image src="@/static/img/my-channel-img1.png" class="img" />
+				<view>{{$t('message.myPageAgent')}}</view>
 			</view>
 			<view class="item" @click="wallet">
-				<image src="@/static/img/my-channel-img2.png" class="img" />				<view>{{$t('message.myPageWallet')}}</view>
+				<image src="@/static/img/my-channel-img2.png" class="img" />
+				<view>{{$t('message.myPageWallet')}}</view>
 			</view>
 			<view class="item">
-				<image src="@/static/img/my-channel-img3.png" class="img" />				<view>{{$t('message.myPageRecharge')}}</view>
+				<image src="@/static/img/my-channel-img3.png" class="img" />
+				<view>{{$t('message.myPageRecharge')}}</view>
 			</view>
 			<view class="item" @click="withdrawal">
-				<image src="@/static/img/my-channel-img4.png" class="img" />				<view>{{$t('message.myPageWithdrawal')}}</view>
+				<image src="@/static/img/my-channel-img4.png" class="img" />
+				<view>{{$t('message.myPageWithdrawal')}}</view>
 			</view>
 		</view>
 		<view class="options">
@@ -111,6 +115,11 @@
 				if (type == 4) url = url + '?url=' + encodeURIComponent('http://13.214.13.197/description.html')
 				uni.navigateTo({
 					url
+				})
+			},
+			member() {
+				uni.navigateTo({
+					url: '/pages/my/member/index/index'
 				})
 			},
 			wallet() {

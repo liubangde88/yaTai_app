@@ -1,274 +1,294 @@
 {
-	"easycom": {
-		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
-	},
-	"pages": [{
-		"path": "pages/home/home/index",
-		"style": {
-			"navigationBarTitleText": "首页",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white",
-			"enablePullDownRefresh": true
-			
-		}
-	},{
-		"path": "pages/project/project/index",
-		"style": {
-			"navigationBarTitleText": "项目",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/chat/chat/index",
-		"style": {
-			"navigationBarTitleText": "客服",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/my/my/index",
-		"style": {
-			"navigationBarTitleText": "我的",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/agent/index",
-		"style": {
-			"navigationBarTitleText": "代理中心",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white",
-			"enablePullDownRefresh": true
-		}
-	},{
-		"path": "pages/my/order/index",
-		"style": {
-			"navigationBarTitleText": "我的订单",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white",
-			"enablePullDownRefresh": true
-		}
-	},{
-		"path": "pages/else/login",
-		"style": {
-			"navigationBarTitleText": "登录",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/else/register",
-		"style": {
-			"navigationBarTitleText": "注册",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/else/forgot",
-		"style": {
-			"navigationBarTitleText": "忘记密码",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/my/wallet/index",
-		"style": {
-			"navigationBarTitleText": "我的钱包",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white",
-			"enablePullDownRefresh": true
-		}
-	},{
-		"path": "pages/else/setting",
-		"style": {
-			"navigationBarTitleText": "设置",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/my/cashRecord/index",
-		"style": {
-			"navigationBarTitleText": "提现记录",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/my/myBank/index",
-		"style": {
-			"navigationBarTitleText": "我的银行卡",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/project/projectDetail/index",
-		"style": {
-			"navigationBarTitleText": "项目详情",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/else/editPwd",
-		"style": {
-			"navigationBarTitleText": "修改密码",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/my/cash/index",
-		"style": {
-			"navigationBarTitleText": "提现",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/else/companyIntro",
-		"style": {
-			"navigationBarTitleText": "公司简介",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/notice/noticeList/index",
-		"style": {
-			"navigationBarTitleText": "公告列表",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/notice/noticeDtail/index",
-		"style": {
-			"navigationBarTitleText": "公告详情",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/else/editBank",
-		"style": {
-			"navigationBarTitleText": "修改银行卡号",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},{
-		"path": "pages/else/attestation",
-		"style": {
-			"navigationBarTitleText": "实名认证",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	},
-	{
-		"path": "pages/else/withdrawal",
-		"style": {
-			"navigationBarTitleText": "提现",
-			"navigationStyle": "custom",
-			"navigationBarTextStyle": "white"
-		}
-	}
-        ,{
-            "path" : "pages/downloadApp/downloadApp/downloadApp",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "下载App",
-				"navigationStyle": "custom",
-				"navigationBarTextStyle": "white"
-            }
-            
-        },
-		{
-            "path" : "pages/sharingInvitation/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "分享邀请",
-				"navigationStyle": "custom",
-				"navigationBarTextStyle": "white"
-            }
-            
-        },
-		{
-            "path" : "pages/else/resetPassword",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "重置密码",
-				"navigationStyle": "custom",
-				"navigationBarTextStyle": "white"
-            }
-            
-        },
-		{
-            "path" : "pages/my/transactionPassword/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "设置交易密码",
-				"navigationStyle": "custom",
-				"navigationBarTextStyle": "white"
-            }
-            
-        },
-		{
-            "path" : "pages/my/transactionPasswordCode/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "设置交易密码发送验证码",
-				"navigationStyle": "custom",
-				"navigationBarTextStyle": "white"
-            }
-            
-        },
-		{
-            "path" : "pages/my/transactionPasswordUpdate/index",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "设置交易密码修改",
-				"navigationStyle": "custom",
-				"navigationBarTextStyle": "white"
-            }
-            
-        },
-		{
-            "path" : "pages/else/notCertified",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "未认证",
-				"navigationStyle": "custom",
-				"navigationBarTextStyle": "white"
-            }
-            
-        }
-    ],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "香港雅太医疗美容医院",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
-		"app-plus": {
-			"background": "#efeff4"
-		}
-	},
-	"tabBar": {
-		"color": "#C4C4C4",
-		"selectedColor": "#86784B",
-		"borderStyle": "black",
-		"backgroundColor": "#ffffff",
-		"position": "bottom",
-		"list": [{
-			"pagePath": "pages/home/home/index",
-			"iconPath": "static/tab/home.svg",
-			"selectedIconPath": "static/tab/home-active.svg",
-			"text": "首页"
-		}, {
-			"pagePath": "pages/project/project/index",
-			"iconPath": "static/tab/project.svg",
-			"selectedIconPath": "static/tab/project-active.svg",
-			"text": "项目"
-		}, {
-			"pagePath": "pages/chat/chat/index",
-			"iconPath": "static/tab/chat.svg",
-			"selectedIconPath": "static/tab/chat-active.svg",
-			"text": "客服"
-		}, {
-			"pagePath": "pages/my/my/index",
-			"iconPath": "static/tab/my.svg",
-			"selectedIconPath": "static/tab/my-active.svg",
-			"text": "我的"
-		}]
-	}
+  "easycom": {
+    "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+  },
+  "pages": [
+    {
+      "path": "pages/home/home/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/project/project/index",
+      "style": {
+        "navigationBarTitleText": "项目",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/chat/chat/index",
+      "style": {
+        "navigationBarTitleText": "客服",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/my/my/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/agent/index",
+      "style": {
+        "navigationBarTitleText": "代理中心",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/my/order/index",
+      "style": {
+        "navigationBarTitleText": "我的订单",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/else/login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/else/register",
+      "style": {
+        "navigationBarTitleText": "注册",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/else/forgot",
+      "style": {
+        "navigationBarTitleText": "忘记密码",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/my/wallet/index",
+      "style": {
+        "navigationBarTitleText": "我的钱包",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/my/member/index/index",
+      "style": {
+        "navigationBarTitleText": "会员中心",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/else/setting",
+      "style": {
+        "navigationBarTitleText": "设置",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/my/cashRecord/index",
+      "style": {
+        "navigationBarTitleText": "提现记录",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/my/myBank/index",
+      "style": {
+        "navigationBarTitleText": "我的银行卡",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/project/projectDetail/index",
+      "style": {
+        "navigationBarTitleText": "项目详情",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/else/editPwd",
+      "style": {
+        "navigationBarTitleText": "修改密码",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/my/cash/index",
+      "style": {
+        "navigationBarTitleText": "提现",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/else/companyIntro",
+      "style": {
+        "navigationBarTitleText": "公司简介",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/notice/noticeList/index",
+      "style": {
+        "navigationBarTitleText": "公告列表",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/notice/noticeDtail/index",
+      "style": {
+        "navigationBarTitleText": "公告详情",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/else/editBank",
+      "style": {
+        "navigationBarTitleText": "修改银行卡号",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/else/attestation",
+      "style": {
+        "navigationBarTitleText": "实名认证",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/else/withdrawal",
+      "style": {
+        "navigationBarTitleText": "提现",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/downloadApp/downloadApp/downloadApp",
+      "style": {
+        "navigationBarTitleText": "下载App",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/sharingInvitation/index",
+      "style": {
+        "navigationBarTitleText": "分享邀请",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/else/resetPassword",
+      "style": {
+        "navigationBarTitleText": "重置密码",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/my/transactionPassword/index",
+      "style": {
+        "navigationBarTitleText": "设置交易密码",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/my/transactionPasswordCode/index",
+      "style": {
+        "navigationBarTitleText": "设置交易密码发送验证码",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/my/transactionPasswordUpdate/index",
+      "style": {
+        "navigationBarTitleText": "设置交易密码修改",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/else/notCertified",
+      "style": {
+        "navigationBarTitleText": "未认证",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "香港雅太医疗美容医院",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "app-plus": {
+      "background": "#efeff4"
+    }
+  },
+  "tabBar": {
+    "color": "#C4C4C4",
+    "selectedColor": "#86784B",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home/index",
+        "iconPath": "static/tab/home.svg",
+        "selectedIconPath": "static/tab/home-active.svg",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/project/project/index",
+        "iconPath": "static/tab/project.svg",
+        "selectedIconPath": "static/tab/project-active.svg",
+        "text": "项目"
+      },
+      {
+        "pagePath": "pages/chat/chat/index",
+        "iconPath": "static/tab/chat.svg",
+        "selectedIconPath": "static/tab/chat-active.svg",
+        "text": "客服"
+      },
+      {
+        "pagePath": "pages/my/my/index",
+        "iconPath": "static/tab/my.svg",
+        "selectedIconPath": "static/tab/my-active.svg",
+        "text": "我的"
+      }
+    ]
+  }
 }

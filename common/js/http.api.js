@@ -88,3 +88,8 @@ export function logout(params){
 export function getDetail(params){
 	return http.post('/api/agent/getDetail', params)
 }
+
+// 获取会员信息
+// export  function getVipInfo(params) {
+// 	return http.post('',params)
+// }

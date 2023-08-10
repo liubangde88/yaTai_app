@@ -131,11 +131,11 @@ export default {
 		welcomeToLogin:"welcome to login",
 		registerName: 'register',
 		productRecDoctor: '项目推医生介绍',
-		myPageAgent: '代理',
-		myPageWallet: '钱包',
-		myPageRecharge: '充值',
-		myPageWithdrawal: '提现',
-		blank: '添加银行卡',
-		withdrawalPassword: '设置取款密码'
+		myPageAgent: 'Member',
+		myPageWallet: 'Wallet',
+		myPageRecharge: 'Recharge',
+		myPageWithdrawal: 'Withdraw',
+		blank: 'Add bank card',
+		withdrawalPassword: 'Set withdrawal password'
 	}
 }
