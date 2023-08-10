@@ -42,15 +42,15 @@
 						</view>
 						<!-- 从代理页面进入并且订单状态为已结算时显示结算日期与结算佣金 -->
 						<view class="mag-b fs26 col6" v-if="isAgent && item.status == '2'">
-							<view>{{$t('message.setCommission')}}</view>
+							<view class="title">{{$t('message.setCommission')}}</view>
 							<view class="content">
 								<span>￥{{item.commission || 0}}</span>
 							</view>
 						</view>
 						<view class="mag-b fs26 col6" v-if="isAgent && item.status == '2'">
-							<view>{{$t('message.settlementDate')}}</view>
+							<view class="title">{{$t('message.settlementDate')}}</view>
 							<view class="content">
-								￥{{item.upTime}}
+								{{item.upTime}}
 							</view>
 						</view>
 					</view>

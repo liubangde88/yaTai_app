@@ -2,17 +2,23 @@
 	<view class="box">
 		<view class="header-box fixed" style="height:'260rpx';">
 			<view class="nav-box rel">
-				<image src="@/static/img/agent-ban.png" class="header-ban img abs"></image>
+				<image src="@/static/img/other-ban.jpg" class="header-ban img abs"></image>
 				<view class="nav abs">
 					<u-navbar leftIconColor="#fff" :title="$t('message.agentCenter')" bgColor="rgba(255,255,255,.0)"
 						:titleStyle="titleStyle" @leftClick="back"></u-navbar>
 				</view>
 			</view>
-			<view class="money-box flexColumn flex-cen">
-				<text class="fs32 col1 bold">{{$t('message.levelText')}}: {{agentLevel || '-'}}</text>
-				<text class="fs32 col1">{{$t('message.commission')}}: </text>
-				<text class="money bold">￥{{commission}}<span class="fs30">（HK$）</span></text>
-			</view>
+
+      <!--代理级别 -->
+      <view class="sbdx">
+        <view class="money-box flexColumn flex-cen">
+            <text class="fs32 col1 bold">{{$t('message.levelText')}}: {{agentLevel || '-'}}</text>
+            <text class="fs32 col1">{{$t('message.commission')}}: </text>
+            <text class="money bold">￥{{commission}}<span class="fs30">（HK$）</span></text>
+        </view>
+      </view>
+
+
 			<view class="tab-box">
 				<view class="menu top-r bgWhite flex">
 					<view class="menu-li flex flex-cen" v-for="(item,index) in menus" :key="index"
@@ -22,17 +28,19 @@
 				</view>
 			</view>
 		</view>
-		<!-- 		<view class="add-agent flexColumn">
-			<image src="@/static/img/emoty.png" mode="" class="empty"></image>
-			<text class="fs26 col6">对不起，您还不是代理商，没办法使用这项功能！</text>
-			<view class="btn" @click="add">
-				申请成为代理商
-			</view>
-		</view> -->
+
+<!--		 		<view class="add-agent flexColumn">-->
+<!--			<image src="@/static/img/emoty.png" mode="" class="empty"></image>-->
+<!--			<text class="fs26 col6">对不起，您还不是代理商，没办法使用这项功能！</text>-->
+<!--			<view class="btn" @click="add">-->
+<!--				申请成为代理商-->
+<!--			</view>-->
+<!--		</view>-->
+
 		<view class="project-main">
 			<view class="project-box bottom-r bgWhite">
 				<!-- 项目列表 -->
-				<Project :list="list" :isShow="false" :isAgent="true" :isOrder="false" :isMore="true"
+				<Project :list="list" id="proxy" :isShow="false" :isAgent="true" :isOrder="false" :isMore="true"
 					:nextPage="nextPage"></Project>
 				<!-- 佣金列表 -->
 				<!-- <view class="record-ul" v-else>
@@ -199,7 +207,71 @@
 	}
 </script>
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
-<style scoped>
+<style scoped lang="scss">
+  .sbdx {
+    position: relative;
+    height: 135px;
+    background: #fff;
+  }
+  .fs32.col1.bold {
+     line-height: 50px;
+  }
+  uni-text.fs32.col1 {
+    font-size: 14px;
+    font-weight: bolder;
+  }
+  uni-text.money.bold {
+    font-size: 18px;
+    font-weight: bolder;
+    line-height: 50px;
+    color: #A19878;
+  }
+  /deep/ uni-view.money-box.flexColumn.flex-cen {
+    background: url("@/static/img/ccc.jpg") no-repeat 100% 100%;
+    filter:(2px);
+    background-size: 100% 100%;
+    width: 94%;
+    margin-left: 3%;
+    border-radius: 10px;
+    height: 170px;
+    position: absolute;
+    top: -53px;
+    z-index: 100;
+    border: 2px solid #cbbd8c;
+  }
+
+  #proxy {
+    /deep/ .bgWhite {
+      padding: 0;
+    }
+
+    /deep/ .li-main.flex {
+      margin: 0;
+      background: #bbb;
+      display: block;
+      border-radius: 10px;
+      padding: 10px 0 10px 0;
+      background: url("@/static/img/other-ban.jpg") no-repeat;
+    }
+
+    /deep/ .title {
+      display: inline-block;
+      width: 20%;
+      text-align: left;
+      color: #fff;
+    }
+    /deep/ .content {
+      display: inline-block;
+      width: 66%;
+      text-align: left;
+      color: #fff;
+      font-size: 12px !important;
+      font-weight: bolder;
+    }
+    /deep/ .xmmc {
+      display: inline-table
+    }
+  }
 	.header-box {
 		/* height: 600rpx; */
 		z-index: 120;
