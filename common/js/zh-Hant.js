@@ -126,6 +126,7 @@ export default {
 		documentNum: "證件號",
 		attestationTips: "您已實名認證，如需更改請聯系客服",
 		attestationTips1: "您還未實名驗證，前往設定",
-		attestationText: "實名認證綁定的姓名與銀行卡綁定的姓名不一致"
+		attestationText: "實名認證綁定的姓名與銀行卡綁定的姓名不一致",
+		vipcenter:'会员中心',
 	}
 }

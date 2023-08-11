@@ -90,6 +90,6 @@ export function getDetail(params){
 }
 
 // 获取会员信息
-// export  function getVipInfo(params) {
-// 	return http.post('',params)
-// }
+export  function getVipInfo(params) {
+	return http.post('/api/agent/getVipList',params)
+}

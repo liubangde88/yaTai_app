@@ -195,7 +195,7 @@ export default {
 		notCertifiedStateNotImage: '身份证件照未上传',
 		notCertifiedState3: '姓名,证件号,基本信息已认证',
 		notCertifiedName: '姓名',
-		notCertifiedNumber: '证件号'
-		
+		notCertifiedNumber: '证件号',
+		vipcenter:'会员中心',
 	}
 }
