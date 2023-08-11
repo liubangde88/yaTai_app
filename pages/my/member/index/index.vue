@@ -32,15 +32,20 @@
                             <!-- 左边-->
                             <view class="vip_left">
                                 <!-- 会员名称-->
-                                <view class="vip_name">{{ list[currentNum].name }}</view>
+                                <view class="vip_name">{{ list[currentNum] ? list[currentNum].name : "会员名" }}</view>
 
                                 <!-- 会员任务完成状态-->
-                                <view class="vip_task">完成成长任务拿更多奖励</view>
+                                <view class="vip_task">{{
+                                        list[currentNum] ?
+                                            (nextUserInfoList.length == list[currentNum].emdnum ?
+                                                "恭喜您！已完成所有会员任务" : "完成成长任务拿更多奖励") : ""
+                                    }}
+                                </view>
 
                                 <!--任务进度条 -->
                                 <view>
                                     <u-line-progress
-                                        :percentage="30"
+                                        :percentage="percentage"
                                         activeColor="#822200"
                                         height="10px"
                                     ></u-line-progress>
@@ -48,13 +53,21 @@
 
                                 <!--有效会员人数-->
                                 <view class="yxhyrs">
-                                    有效会员：{{ list[currentNum].startnum }}-{{ list[currentNum].emdnum }} 人
+                                    有效会员：{{ list[currentNum] ? list[currentNum].startnum : "cao" }}-{{
+                                        list[currentNum] ? list[currentNum].emdnum : ""
+                                    }} 人
                                 </view>
                             </view>
 
                             <!--  右边 -->
                             <view class="vip-right">
-                                <view class="dsj">待升级</view>
+                                <view class="dsj">
+                                    {{
+                                        list[currentNum] ?
+                                            (nextUserInfoList.length == list[currentNum].emdnum ?
+                                                "已完成" : "待升级") : ""
+                                    }}
+                                </view>
                             </view>
                             <view class="clean_"></view>
                         </view>
@@ -66,7 +79,7 @@
             <view class="sjtj">
                 <view>
                     <h3>
-                        {{ name }}升级条件
+                        {{ list[currentNum] ? list[currentNum].name : "会员名" }}升级条件
                     </h3>
                 </view>
                 <u-line color="#bbb"></u-line>
@@ -79,10 +92,18 @@
                         <u-icon
                             :customStyle="{paddingTop:20+'rpx'}"
                             :name="baseListItem.name"
-                            :size="22"
+                            :size="44"
                         ></u-icon>
-                        <text class="grid-text">{{ baseListItem.title }}</text>
-                        <text class="grid-text">{{ baseListItem.yj }}</text>
+                        <text class="grid-text huise">{{ baseListItem.title }}</text>
+
+                        <!--回报情况， baseListIndex: 1 好友佣金 2接单次数 3接单收益率  -->
+                        <text class="grid-text hese">{{ baseListIndex == 0 ?
+                            list[currentNum].dividends + "%" :
+                            baseListIndex == 1 ?
+                                "66" :
+                                baseListIndex == 2 ?
+                                    "18%" : ""
+                            }}</text>
                     </u-grid-item>
                 </u-grid>
             </view>
@@ -109,26 +130,27 @@ export default {
     data() {
         return {
             indicator: false,
-            list: [], // 图片
+            list: [], // viplist 等级列表
             currentNum: 0,
             baseList: [
                 {
-                    name: 'https://cdn.uviewui.com/uview/example/button.png',
+                    name: '/static/img/vip_icon2.jpg',
                     title: '好友佣金', // 接单次数
                     yj: '7%'
                 },
                 {
-                    name: 'https://cdn.uviewui.com/uview/example/button.png',
+                    name: '/static/img/vip_icon2.jpg',
                     title: '接单次数',
                     yj: 15
                 },
                 {
-                    name: 'https://cdn.uviewui.com/uview/example/button.png',
+                    name: '/static/img/vip_icon2.jpg',
                     title: '接单收益率',
                     yj: '11%'
                 },
             ],
-            name: "青铜会员"
+            nextUserInfoList: [], // 下级用户列表
+            percentage: 0,  // 当前会员等级下的完成度
         }
     },
     created() {
@@ -143,7 +165,15 @@ export default {
         getVipInfo({agentId: agentId}).then(res => {
             if (res.code == 0) {
                 // 设置轮播图列表
-                this.$data.list = res.data.proxyList
+                this.list = res.data.proxyList
+
+                // 下级会员列表
+                this.nextUserInfoList = res.data.nextUserList
+
+                // 完成度
+                this.percentage = this.nextUserInfoList / this.list[this.currentNum].emdnum
+
+
             }
         })
         // alert(id)
@@ -162,7 +192,22 @@ export default {
     clear: both;
 }
 
+.grid-text {
+    margin-bottom: 10px;
+}
+
+.huise {
+    color: #bbbbbb;
+}
+
+.hese {
+    color: #1f1f1f;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
 #card_list {
+
     /deep/ .u-swiper__wrapper__item__wrapper__image {
         border: 1px solid #BF7959;
     }
@@ -208,7 +253,7 @@ export default {
         display: inline-block;
         height: 0;
         float: left;
-        width: 79%;
+        width: 60%;
     }
 
 
