@@ -126,6 +126,10 @@ export function checkCode(params) {
 }
 
 // 修改密码
-export function updatePasswd (params) {
+export function updatePasswd(params) {
     return http.post('/api/agent/updatePasswd', params)
+}
+
+export function getRechargeList(param) {
+    return http.post('/api/wallet/getRechargeList', param)
 }

@@ -114,7 +114,7 @@
                         <!--回报情况， baseListIndex: 1 好友佣金 2接单次数 3接单收益率  -->
                         <text class="grid-text hese">{{
                                 baseListIndex == 0 ?
-                                    list[currentNum].dividends + "%" :
+                                    list[currentNum] ?list[currentNum].dividends + "%" : "":
                                     baseListIndex == 1 ?
                                         proList :
                                         baseListIndex == 2 ?

@@ -138,6 +138,7 @@ export default {
 		blank: 'Add bank card',
 		withdrawalPassword: 'Set withdrawal password',
 		verificationCode: "Verification code for Email",
-		transactionPasswordCodeSend : "Sending e-mail"
+		transactionPasswordCodeSend : "Sending e-mail",
+		rechargeContact:'Please contact customer service for recharge'
 	}
 }
