@@ -119,3 +119,13 @@ export function getVipInfo(params) {
 export function emailIsRegister(params) {
     return http.post('/api/agent/emailIsRegister', params)
 }
+
+// 邮箱验证 checkCode
+export function checkCode(params) {
+    return http.post('/api/agent/checkCode', params)
+}
+
+// 修改密码
+export function updatePasswd (params) {
+    return http.post('/api/agent/updatePasswd', params)
+}

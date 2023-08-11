@@ -137,6 +137,7 @@ export default {
 		myPageWithdrawal: 'Withdraw',
 		blank: 'Add bank card',
 		withdrawalPassword: 'Set withdrawal password',
-		verificationCode: "Verification code for Email"
+		verificationCode: "Verification code for Email",
+		transactionPasswordCodeSend : "Sending e-mail"
 	}
 }
