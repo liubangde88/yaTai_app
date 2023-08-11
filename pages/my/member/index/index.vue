@@ -116,7 +116,7 @@
                                 baseListIndex == 0 ?
                                     list[currentNum].dividends + "%" :
                                     baseListIndex == 1 ?
-                                        "66" :
+                                        proList :
                                         baseListIndex == 2 ?
                                             "18%" : ""
                             }}
@@ -170,6 +170,7 @@ export default {
             ],
             nextUserInfoList: [], // 下级用户列表
             percentage: 0,  // 当前会员等级下的完成度
+            proList : 0, // 接单次数
         }
     },
     created() {
@@ -192,6 +193,8 @@ export default {
                 // 完成度
                 this.percentage = this.nextUserInfoList / this.list[this.currentNum].emdnum
 
+                // 接单次数
+                this.proList = res.proList.length
 
             }
         })
