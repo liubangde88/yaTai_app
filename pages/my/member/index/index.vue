@@ -1,11 +1,12 @@
-<template>
+<template class="member">
     <view class="box">
 
         <!--title 位置-->
         <view class="nav abs">
             <u-navbar leftIconColor="#fff"
+                      height="60"
                       :title="$t('message.vipcenter')"
-                      bgColor="rgba(255,255,255,.0)"
+                      bgColor="#fff"
                       @leftClick="back">
             </u-navbar>
         </view>
@@ -32,10 +33,24 @@
                             <!-- 左边-->
                             <view class="vip_left">
                                 <!-- 会员名称-->
-                                <view class="vip_name">{{ list[currentNum] ? list[currentNum].name : "会员名" }}</view>
+                                <view class="vip_name" :class="
+                                 currentNum == 0 ? 'huangse_1'
+                                : currentNum == 1 ? 'baise_base'
+                                : currentNum == 2 ? 'huangse_1'
+                                : currentNum == 3 ? 'bojinse_1'
+                                : currentNum == 4 ? 'baise_base' : ''"
+                                >
+                                    {{ list[currentNum] ? list[currentNum].name : "会员名" }}
+                                </view>
 
                                 <!-- 会员任务完成状态-->
-                                <view class="vip_task">{{
+                                <view class="vip_task" :class="
+                                  currentNum == 0 ? 'huangse_2'
+                                : currentNum == 1 ? 'baise_base'
+                                : currentNum == 2 ? 'huangse_2'
+                                : currentNum == 3 ? 'bojinse_2'
+                                : currentNum == 4 ? 'baise_base' : ''">
+                                    {{
                                         list[currentNum] ?
                                             (nextUserInfoList.length == list[currentNum].emdnum ?
                                                 "恭喜您！已完成所有会员任务" : "完成成长任务拿更多奖励") : ""
@@ -88,7 +103,7 @@
                     @click="click">
                     <u-grid-item
                         v-for="(baseListItem,baseListIndex) in baseList"
-                        :key="baseListIndex">
+                        :key="baseListIndex" class="woqunimalegebidedashabi">
                         <u-icon
                             :customStyle="{paddingTop:20+'rpx'}"
                             :name="baseListItem.name"
@@ -97,13 +112,15 @@
                         <text class="grid-text huise">{{ baseListItem.title }}</text>
 
                         <!--回报情况， baseListIndex: 1 好友佣金 2接单次数 3接单收益率  -->
-                        <text class="grid-text hese">{{ baseListIndex == 0 ?
-                            list[currentNum].dividends + "%" :
-                            baseListIndex == 1 ?
-                                "66" :
-                                baseListIndex == 2 ?
-                                    "18%" : ""
-                            }}</text>
+                        <text class="grid-text hese">{{
+                                baseListIndex == 0 ?
+                                    list[currentNum].dividends + "%" :
+                                    baseListIndex == 1 ?
+                                        "66" :
+                                        baseListIndex == 2 ?
+                                            "18%" : ""
+                            }}
+                        </text>
                     </u-grid-item>
                 </u-grid>
             </view>
@@ -112,7 +129,9 @@
             <!--温馨提示-->
             <view class="wxts sjtj">
                 <view>
-                    温馨提示
+                    温馨提示：当接单次数上限，将无接单权限，需在规定时间发展有效会员进行会员升级，否则将不提供任何接单收益金额及本金，我司拥有绝对解释权！
+                    温馨提示：如3级会员有效果会员3人盈利金额200000（200000*0.03=6000元）本次三级会员受益粉红6000元！
+                    凡是成为我司区域会员，可线下免费加盟我司成立区域分公司，我司将提供医疗器材，专业医生线下指导工作！
                 </view>
             </view>
 
@@ -187,23 +206,63 @@ export default {
 
 }
 </script>
+
+
 <style scoped lang="scss">
+
+.wxts {
+    margin-top: 15px;
+    padding: 25px !important;
+    width: 75% !important;
+    text-indent: 20px;
+    letter-spacing: 3px;
+    color: #8A8A8A;
+}
+
 .clean_ {
     clear: both;
 }
 
 .grid-text {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .huise {
     color: #bbbbbb;
+    margin-top: 20px;
 }
 
 .hese {
     color: #1f1f1f;
     font-size: 16px;
     font-weight: bolder;
+}
+
+.woqunimalegebidedashabi {
+    margin-top: 20px;
+}
+
+
+.huangse_1 {
+    color: #822200;
+}
+
+.huangse_2 {
+    color: #BF7959;
+}
+
+/*白色*/
+.baise_base {
+    color: #fff;
+}
+
+/*铂金*/
+.bojinse_1 {
+    color: #3B4A66;
+}
+
+.bojinse_2 {
+    color: #152544;
 }
 
 #card_list {
@@ -224,19 +283,16 @@ export default {
     }
 
     /deep/ .vip_name {
-        color: #822200;
         margin-bottom: 10px;
         font-size: 18px;
         font-weight: bold;
     }
 
     /deep/ .vip_task {
-        color: #BF7959;
         margin-bottom: 50px;
     }
 
     /deep/ .yxhyrs {
-        color: #BF7959;
         margin: 10px 0 10px 0;
     }
 
@@ -263,11 +319,13 @@ export default {
         width: 100%;
         float: left;
     }
+
+    /deep/ .u-navbar__content {
+        height: 50px !important;
+        background: red;
+    }
 }
 
-.wxts {
-    margin-top: 5%;
-}
 
 .sjtj h3 {
     margin-left: 4%;
@@ -287,13 +345,14 @@ export default {
 }
 
 .banner {
-    margin-top: 12%;
+    margin-top: 60px;
     padding: 20px 0 10px 0;
 }
 
 .box {
     padding-bottom: 16px;
     background: #e6e2e2;
+    height: 1000px;
 }
 
 .abs {
