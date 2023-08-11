@@ -136,6 +136,7 @@ export default {
 		myPageRecharge: 'Recharge',
 		myPageWithdrawal: 'Withdraw',
 		blank: 'Add bank card',
-		withdrawalPassword: 'Set withdrawal password'
+		withdrawalPassword: 'Set withdrawal password',
+		verificationCode: "Verification code for Email"
 	}
 }

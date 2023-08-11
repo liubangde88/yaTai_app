@@ -36,7 +36,7 @@
         </view>
         <view class="option flex flex-sb fs28 col9">
           <text @click="toPath('/pages/else/register')">{{ $t('message.register') }}</text>
-          <text @click="toPath('forgot')">{{ $t('message.forgot') }}?</text>
+          <text @click="toPath('/pages/else/forgot')">{{ $t('message.forgot') }}?</text>
         </view>
       </view>
     </view>

@@ -197,5 +197,6 @@ export default {
 		notCertifiedName: '姓名',
 		notCertifiedNumber: '证件号',
 		vipcenter:'会员中心',
+		verificationCode: "邮箱验证"
 	}
 }
