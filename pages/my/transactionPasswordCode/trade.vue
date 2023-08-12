@@ -70,25 +70,29 @@ export default {
 
 
         //邮件发送参数 mobile : param.account, email : param.account,
-        var emailParam = {  _register : 1 }
+
 
         // 获取用户信息
         getDetail({agentId : agentId}).then(res => {
            if(res.code === 0 ) {
+               var emailParam = {  _register : 1 }
                emailParam.mobile = res.agent.mobile
                emailParam.email = res.agent.mobile
                this.email =  res.agent.mobile
+
+               // 发送邮件
+               Object.getOwnPropertyNames(emailParam).length
+               sendEmail(emailParam).then(res => {
+                   const  that = this
+                   if(res.code == 0 ) {
+                       this.isSendEmail = true
+                       uni.$u.toast(that.$t('message.successText'));
+                   }
+               })
            }
         })
 
-        // 发送邮件
-        sendEmail({ mobile : param.account, email : param.account, _register : 1 }).then(res => {
-            const  that = this
-            if(res.code == 0 ) {
-                this.isSendEmail = true
-                uni.$u.toast(that.$t('message.successText'));
-            }
-        })
+
 	},
 	methods: {
 		submit() {
@@ -110,12 +114,22 @@ export default {
                               return  uni.$u.toast(that.$t('message.validateFail'));
                             }
                            // 修改成功，返回登陆页
-                           if(ress.code === 0 ) {
-                               uni.$u.toast(that.$t('message.successText'));
-                               this.$router.push({
-                                   path: '/pages/else/login',
-                                   query: this.userInfo
-                               });
+                           if(ress.code === 0 ) { //pages/my/my/index
+                                uni.showToast({
+                                   title: that.$t('message.successText'),
+                                   icon: 'hourglass-half-fill',
+                               })
+
+                               // 成功跳转
+                               setTimeout(() => {
+                                   this.$router.push({
+                                       path: '/pages/my/my/index',
+                                       query: this.data
+                                   });
+                               },2000)
+
+
+
                            }
 
                        })
