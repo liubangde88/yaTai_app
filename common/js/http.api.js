@@ -130,6 +130,12 @@ export function updatePasswd(params) {
     return http.post('/api/agent/updatePasswd', params)
 }
 
+// 获取充值记录
 export function getRechargeList(param) {
     return http.post('/api/wallet/getRechargeList', param)
+}
+
+// 实名认证 verifiedCard
+export function verifiedCard(param) {
+    return http.post('/api/wallet/verifiedCard', param)
 }
