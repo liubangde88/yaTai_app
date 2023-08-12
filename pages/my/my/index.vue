@@ -14,9 +14,9 @@
 				<image src="@/static/img/my-channel-img2.png" class="img" />
 				<view>{{$t('message.myPageWallet')}}</view>
 			</view>
-			<view class="item">
+			<view class="item" @click="shareLink">
 				<image src="@/static/img/my-channel-img3.png" class="img" />
-				<view>{{$t('message.myPageRecharge')}}</view>
+				<view>{{$t('message.shareFriend')}}</view>
 			</view>
 			<view class="item" @click="withdrawal">
 				<image src="@/static/img/my-channel-img4.png" class="img" />
@@ -105,6 +105,11 @@
 
 		},
 		methods: {
+            shareLink () {
+                uni.navigateTo({
+                    url: '/pages/sharingInvitation/index'
+                })
+            },
 			// 跳转
 			toPath(url, type) {
 				if (type == '3') return
