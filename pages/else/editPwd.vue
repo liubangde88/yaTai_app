@@ -1,10 +1,12 @@
 <template>
 	<view class="login-container">
-		<<!-- view class="header-box fixed">
-			<image src="@/static/img/other-ban.png" class="img"></image>
-			<u-navbar leftIconColor="#fff" :title="title" bgColor="rgba(255,255,255,.0)" :titleStyle="{color: '#fff'}"
-				@leftClick="back"></u-navbar>
-		</view> -->
+
+        <!--title-->
+        <view class="header-box fixed">
+            <u-navbar :title="$t('message.edit') + $t('message.editPwd')" height="54" bgColor="#f0e9e9" @leftClick="back"></u-navbar>
+        </view>
+
+
 		<view class="login-box">
 			<view class="login-from">
 				<!-- 表单 -->
@@ -71,7 +73,7 @@
 				this.$refs.form.validate().then(res => {
 					this.edit()
 				}).catch(errors => {
-					
+
 				})
 			},
 			edit() {
@@ -110,6 +112,11 @@
 
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+    .login-container {
+        background: url('@/static/img/notice-bg.png') no-repeat;
+        background-size: 100% 100%;
+        height: 100vh;
+    }
 	.login-box {
 		/* #ifdef APP-PLUS */
 		top: 300rpx;
@@ -123,20 +130,22 @@
 		box-sizing: border-box;
 		z-index: 99;
 	}
-	
+
 	.login-from {
 		width: 100%;
 		height: 50vh;
 		border-radius: 20rpx;
 		padding: 60rpx;
 		box-sizing: border-box;
+        margin-top: 90px;
 	}
 	.form-item {
 		margin: 40rpx 0;
 	}
 	.btn {
+        border-radius: 10px !important;
 		width: 70vw;
-		background: #24abcc;
+		background: #86784B;
 		margin: 100rpx auto 50rpx auto;
 	}
 </style>

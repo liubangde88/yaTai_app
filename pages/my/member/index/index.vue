@@ -114,11 +114,11 @@
                         <!--回报情况， baseListIndex: 1 好友佣金 2接单次数 3接单收益率  -->
                         <text class="grid-text hese">{{
                                 baseListIndex == 0 ?
-                                    list[currentNum] ?list[currentNum].dividends + "%" : "":
+                                    list[currentNum] ? list[currentNum].dividends + "%" : "" :
                                     baseListIndex == 1 ?
                                         proList :
                                         baseListIndex == 2 ?
-                                            "18%" : ""
+                                            syl + "%" : ""
                             }}
                         </text>
                     </u-grid-item>
@@ -148,6 +148,7 @@ import {
 export default {
     data() {
         return {
+            syl: 0,
             indicator: false,
             list: [], // viplist 等级列表
             currentNum: 0,
@@ -170,7 +171,7 @@ export default {
             ],
             nextUserInfoList: [], // 下级用户列表
             percentage: 0,  // 当前会员等级下的完成度
-            proList : 0, // 接单次数
+            proList: 0, // 接单次数
         }
     },
     created() {
@@ -194,8 +195,18 @@ export default {
                 this.percentage = this.nextUserInfoList / this.list[this.currentNum].emdnum
 
                 // 接单次数
-                this.proList = res.proList.length
+                const list = res.proList
 
+                this.proList = list.length
+                let agentPercents = 0 // 项目id
+                var long = 1
+                list.forEach((item, index) => {
+                    long = long + index
+                    agentPercents = agentPercents + item.agentPercent
+                })
+
+                // 计算收益率
+                this.syl = (agentPercents / 1).toFixed(2)
             }
         })
         // alert(id)

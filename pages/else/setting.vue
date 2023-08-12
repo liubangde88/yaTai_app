@@ -27,14 +27,7 @@
 						{{vuex_user.mobile || '-'}}
 					</view>
 				</view>
-				<!-- 提现密码 -->
-				<view class="user-li fs30 flex" @click.stop="toPath('/pages/else/editPwd?type=1','pwd')">
-					<text class="col1">{{$t('message.withPwd')}}</text>
-					<view class="input col9">
-						{{$t('message.edit')}}
-					</view>
-					<u-icon name="arrow-right" color="#999" size="18"></u-icon>
-				</view>
+
 				<!-- 修改密码 -->
 				<view class="user-li fs30 flex" @click.stop="toPath('/pages/else/editPwd?type=2','pwd')">
 					<text class="col1">{{$t('message.editPwd')}}</text>
@@ -60,7 +53,7 @@
 					<!-- <u-input :placeholder="$t('message.withCount')" :placeholderStyle="{color: '#999'}"
 						inputAlign="right" border="none" v-model="withCount" @change="editHandle('withCount')">
 					</u-input> -->
-					
+
 					<!-- <view class="input col9">
 						{{withCount || '修改'}}
 					</view>

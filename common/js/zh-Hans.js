@@ -200,6 +200,8 @@ export default {
 		notCertifiedNumber: '证件号',
 		vipcenter:'会员中心',
 		verificationCode: "邮箱验证",
-		bankCenter: '银行卡中心'
+		bankCenter: '银行卡中心',
+		resetJiaoyiPasswd : "重设交易密码",
+		resetjiaoyitxt: "您已设定交易密码，请谨慎修改！"
 	}
 }
