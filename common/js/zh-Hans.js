@@ -204,5 +204,6 @@ export default {
 		resetJiaoyiPasswd : "重设交易密码",
 		resetjiaoyitxt: "您已设定交易密码，请谨慎修改！",
 		shareFriend: "邀请",
+		photoAlbum: "当前设备没有相册系统，请手机端打开并授权"
 	}
 }
