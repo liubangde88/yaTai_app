@@ -1,7 +1,7 @@
 <template>
 	<view class="box">
 		<view class="header-box fixed">
-			<image src="@/static/img/agent-ban.png" class="header-ban img"></image>
+			<image src="@/static/img/other-ban.jpg" class="header-ban img"></image>
 			<u-navbar leftIconColor="#fff" :title="$t('message.cashRecord')" bgColor="rgba(255,255,255,.0)"
 				:titleStyle="{color: '#fff'}" @leftClick="back"></u-navbar>
 		</view>
@@ -117,7 +117,7 @@
 		height: 100rpx;
 		border-radius: 50rpx;
 		justify-content: center;
-		background: linear-gradient(-45deg, #78d4e7, #57b3c5);
+		background: #A19878;
 		margin-right: 30rpx;
 	}
 	.li-right {
