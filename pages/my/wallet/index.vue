@@ -134,43 +134,53 @@
 		},
 		methods: {
             recharge() {
-                 uni.showToast({
+                return uni.showToast({
                     icon: 'none',
-                    title: this.$t('message.rechargeContact')
+                    title: this.$t('message.contact')
                 })
 
             },
 			queryData(item, index) {
-                // 当前tab
-				this.activeIndex = index;
+                uni.showToast({
+                    icon: 'none',
+                    title: "正在加载",
+                    loading : true
+                })
+                setTimeout(() => {
 
-                //如果查看全部账单
-                if( index === 0 ) {
-                    this.orderData = this.totalData
-                }
+                    // 当前tab
+                    this.activeIndex = index;
 
-                // 用户查看充值账单
-                if( index === 1) {
-                    let data1 = []
-                    this.totalData.forEach((item) => {
-                        if( item.type === 0) {
-                            data1.push(item)
-                        }
-                    })
-                    this.orderData = data1
-                }
+                    //如果查看全部账单
+                    if( index === 0 ) {
+                        this.orderData = this.totalData
+                    }
 
-                // 用户查看冻结账单
-                if( index === 2) {
-                    console.log("冻结账单")
-                    let data2 = []
-                    this.totalData.forEach((item) => {
-                        if( item.type != 0) {
-                            data2.push(item)
-                        }
-                    })
-                    this.orderData = data2
-                }
+                    // 用户查看充值账单
+                    if( index === 1) {
+                        let data1 = []
+                        this.totalData.forEach((item) => {
+                            if( item.type === 0) {
+                                data1.push(item)
+                            }
+                        })
+                        this.orderData = data1
+                    }
+
+                    // 用户查看冻结账单
+                    if( index === 2) {
+                        console.log("冻结账单")
+                        let data2 = []
+                        this.totalData.forEach((item) => {
+                            if( item.type != 0) {
+                                data2.push(item)
+                            }
+                        })
+                        this.orderData = data2
+                    }
+
+                }, 500)
+
 			},
 			// 获取钱包详情
 			getWallet() {
