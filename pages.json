@@ -46,6 +46,15 @@
       }
     },
     {
+      "path": "pages/my/transactionPasswordCode/trade",
+      "style": {
+        "navigationBarTitleText": "交易密码设定",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
       "path": "pages/my/order/index",
       "style": {
         "navigationBarTitleText": "我的订单",

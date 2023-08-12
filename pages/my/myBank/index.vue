@@ -2,8 +2,9 @@
 	<view class="box">
 		<view class="header-box fixed">
 			<u-navbar bgColor="rgba(255,255,255)" 
-				@leftClick="back"></u-navbar>
+				@leftClick="back"  :title="$t('message.bankCenter')"></u-navbar>
 		</view>
+
 		<view class="login-box" v-if="vuex_user.withMan && vuex_user.withName && vuex_user.withCount && vuex_user.withAddress">
 			<view class="bank-box">
 				<view class="flex flex-sb fs30 colf" style="margin-bottom: 10rpx;">
@@ -212,6 +213,7 @@
 		padding: 0 30rpx;
 		box-sizing: border-box;
 		z-index: 99;
+        margin-top: 18%;
 		.title{
 			font-family: Open Sans;
 			font-size: 40rpx;

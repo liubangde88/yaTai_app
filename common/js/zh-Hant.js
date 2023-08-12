@@ -128,5 +128,6 @@ export default {
 		attestationTips1: "您還未實名驗證，前往設定",
 		attestationText: "實名認證綁定的姓名與銀行卡綁定的姓名不一致",
 		vipcenter:'会员中心',
+		bankCenter: '银行卡中心'
 	}
 }

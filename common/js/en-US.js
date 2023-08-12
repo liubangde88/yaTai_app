@@ -139,6 +139,7 @@ export default {
 		withdrawalPassword: 'Set withdrawal password',
 		verificationCode: "Verification code for Email",
 		transactionPasswordCodeSend : "Sending e-mail",
-		rechargeContact:'Please contact customer service for recharge'
+		rechargeContact:'Please contact customer service for recharge',
+		bankCenter: '银行卡中心'
 	}
 }
