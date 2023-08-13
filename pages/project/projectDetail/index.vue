@@ -175,6 +175,23 @@
 </script>
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+    .box {
+        /deep/ .u-line-1.u-navbar__content__title{
+            font-size: 1rem;
+            line-height: 3rem;
+            color: #FFFFFF !important;
+        }
+        /deep/ .u-navbar--fixed > .u-navbar__content {
+            background: url("@/static/img/other-ban.jpg");
+            .u-navbar__content__left{
+                .u-icon.u-icon--right {
+                    .u-icon__icon.uicon-arrow-left {
+                        color: #FFFFFF !important;
+                    }
+                }
+            }
+        }
+    }
     .xxjs {
         line-height:1.1rem;
         font-size: 0.8rem;

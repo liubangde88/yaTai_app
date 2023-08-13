@@ -110,6 +110,23 @@
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
 	.notic-container{
+
+        /deep/ .u-line-1.u-navbar__content__title{
+            font-size: 1rem;
+            line-height: 3rem;
+            color: #FFFFFF !important;
+        }
+        /deep/ .u-navbar--fixed > .u-navbar__content {
+            background: url("@/static/img/other-ban.jpg");
+            .u-navbar__content__left{
+                .u-icon.u-icon--right {
+                    .u-icon__icon.uicon-arrow-left {
+                        color: #FFFFFF !important;
+                    }
+                }
+            }
+        }
+
 		background: url('@/static/img/notice-bg.png') no-repeat;
 		background-size: 100% 100%;
 		height: 100vh;
@@ -133,6 +150,16 @@
 		padding: 20rpx;
 		box-sizing: border-box;
 		margin-bottom: 30rpx;
+        border: 1px solid #e3e1e1;
+        .title {
+            line-height: 2rem;
+            font-size: 29rpx;
+            font-weight: bolder;
+        }
+        .fs28 {
+            padding-top: 10rpx;
+            padding-bottom: 15rpx;
+        }
 	}
 	.title {
 		margin-bottom: 10rpx;
