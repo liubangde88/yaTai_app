@@ -118,6 +118,17 @@ import {
 
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+.box {
+    /deep/ .u-line-1.u-navbar__content__title{
+        font-size: 1rem;
+        line-height: 3rem;
+    }
+}
+    .bgWhite {
+        /deep/ .flex-sa {
+            background: red;
+        }
+    }
 	.login-box {
 		/* #ifdef APP-PLUS */
 		top: 300rpx;

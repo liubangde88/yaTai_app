@@ -210,32 +210,32 @@
 <style scoped lang="scss">
   .sbdx {
     position: relative;
-    height: 135px;
+    height: 270rpx;
     background: #fff;
   }
   .fs32.col1.bold {
-     line-height: 50px;
+     line-height: 100rpx;
   }
   uni-text.fs32.col1 {
-    font-size: 14px;
+    font-size: 28rpx;
     font-weight: bolder;
   }
   uni-text.money.bold {
-    font-size: 18px;
+    font-size: 36rpx;
     font-weight: bolder;
-    line-height: 50px;
+    line-height: 100rpx;
     color: #A19878;
   }
   /deep/ uni-view.money-box.flexColumn.flex-cen {
     background: url("@/static/img/ccc.jpg") no-repeat 100% 100%;
-    filter:(2px);
+    filter:(4rpx);
     background-size: 100% 100%;
     width: 94%;
     margin-left: 3%;
-    border-radius: 10px;
-    height: 170px;
+    border-radius: 20rpx;
+    height: 320rpx;
     position: absolute;
-    top: -53px;
+    top: -106rpx;
     z-index: 100;
     border: 2px solid #cbbd8c;
   }
@@ -246,12 +246,20 @@
     }
 
     /deep/ .li-main.flex {
+        display: block;
       margin: 0;
       background: #bbb;
-      display: block;
-      border-radius: 10px;
-      padding: 10px 0 10px 0;
+      border-radius: 20rpx;
+      padding: 20rpx 0 20rpx 0;
       background: url("@/static/img/other-ban.jpg") no-repeat;
+        .mag-b{
+            display: block;
+            width: 100%;
+            .tihceng{
+                text-align: left !important;
+            }
+        }
+
     }
 
     /deep/ .title {
@@ -265,7 +273,7 @@
       width: 66%;
       text-align: left;
       color: #fff;
-      font-size: 12px !important;
+      font-size: 24rpx !important;
       font-weight: bolder;
     }
     /deep/ .xmmc {

@@ -1,8 +1,18 @@
 <template>
 	<view class="attestation-container">
-		<u-navbar bgColor="rgba(255,255,255)" @leftClick="back" />
+        <!--title 位置-->
+        <view class="nav abs">
+            <u-navbar leftIconColor="#fff"
+                      height="60"
+                      :title="$t('message.attestation')"
+                      bgColor="#fff"
+                      @leftClick="back">
+            </u-navbar>
+        </view>
 
-		<view class="title">{{agent ?
+
+
+        <view class="title">{{agent ?
                 agent.cardStatus == 0 ?
                     $t('message.attestation')
                     : agent.cardStatus == 1 ?
@@ -198,8 +208,27 @@
 	}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
 .attestation-container{
+    /deep/ .u-line-1.u-navbar__content__title{
+        font-size: 1rem;
+        line-height: 90rpx;
+        color: #FFFFFF;
+
+    }
+    /deep/ .u-navbar--fixed > .u-navbar__content {
+        height: 100rpx !important;
+        background: url("@/static/img/other-ban.jpg");
+        .u-navbar__content__left{
+            .u-icon.u-icon--right {
+                .u-icon__icon.uicon-arrow-left {
+                    color: #FFFFFF !important;
+                }
+            }
+        }
+    }
+
 	padding-left: 30rpx;
 	padding-right: 30rpx;
 	padding-bottom: 280rpx;
@@ -207,8 +236,9 @@
 		font-family: Open Sans;
 		font-size: 40rpx;
 		font-weight: 600;
-		margin-top: 120rpx;
+		margin-top: 25%;
 	}
+
 	.sub-title{
 		font-family: PingFang HK;
 		font-size: 24rpx;
@@ -216,10 +246,15 @@
 		color: #A1A0A0;
 		margin-bottom: 34rpx;
 		margin-top: 10rpx;
+        line-height: 2rem;
 	}
 	.form{
 		margin-bottom: 40rpx;
+
 	}
+    /deep/ .u-form-item__body {
+        line-height: 2.5rem;
+    }
 	.card-title{
 		font-family: Open Sans;
 		font-size: 28rpx;
@@ -233,6 +268,7 @@
 			font-family: PingFang HK;
 			font-size: 24rpx;
 			color: #C4C4C4;
+            line-height: 2.5rem;
 		}
 		.car-title{
 			font-family: PingFang HK;

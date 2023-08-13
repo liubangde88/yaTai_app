@@ -93,6 +93,12 @@
 </script>
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+    .box {
+        /deep/ .u-line-1.u-navbar__content__title{
+            font-size: 1rem;
+            line-height: 3rem;
+        }
+    }
 	.record-ul {
 		width: 100vw;
 		/* #ifdef APP-PLUS */
@@ -125,5 +131,9 @@
 	}
 	.info {
 		width: 100%;
+        line-height: 2rem;
 	}
+    .fs32{
+        font-size: 20rpx !important;
+    }
 </style>t

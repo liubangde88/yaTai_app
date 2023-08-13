@@ -201,6 +201,34 @@
 
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+    .box {
+        /deep/ .u-line-1.u-navbar__content__title{
+            font-size: 1rem;
+            line-height: 3rem;
+            color: #FFFFFF;
+        }
+        /deep/ .u-navbar--fixed > .u-navbar__content {
+            background: url("@/static/img/other-ban.jpg");
+            padding-top: 10rpx;
+            padding-bottom: 10rpx;
+            .u-navbar__content__left{
+                .u-icon.u-icon--right {
+                    .u-icon__icon.uicon-arrow-left {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+        /deep/ .u-navbar--fixed {
+            height: 100%;
+        }
+        .header-box {
+            max-height: 120rpx;
+            .u-navbar {
+                height: 100%;
+            }
+        }
+    }
 	.login-box {
 		/* #ifdef APP-PLUS */
 		top: 300rpx;

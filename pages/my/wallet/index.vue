@@ -19,7 +19,7 @@
             </view>
 
 			<view class="recharge" @click="recharge">
-				{{$t('message.myPageRecharge')}}
+				{{$t('message.myPageRecharge')}} >>
 			</view>
 		</view>
 		<view class="recharge-record">
@@ -141,11 +141,11 @@
 
             },
 			queryData(item, index) {
-                uni.showToast({
-                    icon: 'none',
-                    title: "正在加载",
-                    loading : true
-                })
+                // uni.showToast({
+                //     icon: 'none',
+                //     title: "正在加载",
+                //     loading : true
+                // })
                 setTimeout(() => {
 
                     // 当前tab
@@ -179,7 +179,7 @@
                         this.orderData = data2
                     }
 
-                }, 500)
+                }, 100)
 
 			},
 			// 获取钱包详情
@@ -300,10 +300,10 @@
 			}
 			.recharge{
 				width: 140rpx;
-				line-height: 70rpx;
+				line-height: 60rpx;
 				border-radius: 44rpx 0px 0px 44rpx;
 				font-family: ABeeZee;
-				font-size: 36rpx;
+				font-size: 26rpx;
 				background: rgba(255, 255, 255, 0.12);
 				text-align: center;
 			}
@@ -381,6 +381,7 @@
 							color: #979797;
 							display: flex;
 							align-items: center;
+                            line-height: 3rem;
 							.ellipsis{
 								display: block;
 								overflow: hidden;
@@ -398,8 +399,6 @@
 							font-family: ABeeZee;
 							font-size: 24rpx;
 							color: #979797;
-							margin-top: 20rpx;
-							margin-bottom: 20rpx;
 						}
 					}
 					.type{

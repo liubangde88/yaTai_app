@@ -223,14 +223,31 @@ export default {
 
 
 <style scoped lang="scss">
-
+.box {
+    /deep/ .u-line-1.u-navbar__content__title{
+        font-size: 1rem;
+        line-height: 3rem;
+        color: #FFFFFF;
+    }
+    /deep/ .u-navbar--fixed > .u-navbar__content {
+        background: url("@/static/img/other-ban.jpg");
+        .u-navbar__content__left{
+            .u-icon.u-icon--right {
+                .u-icon__icon.uicon-arrow-left {
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
 .wxts {
-    margin-top: 15px;
-    padding: 25px !important;
+    margin-top: 30rpx;
+    padding: 50rpx !important;
     width: 75% !important;
-    text-indent: 20px;
-    letter-spacing: 3px;
+    text-indent: 40rpx;
+    letter-spacing: 6rpx;
     color: #8A8A8A;
+    line-height: 1.5rem;
 }
 
 .clean_ {
@@ -238,22 +255,22 @@ export default {
 }
 
 .grid-text {
-    margin-bottom: 5px;
+    margin-bottom: 40rpx;
 }
 
 .huise {
     color: #bbbbbb;
-    margin-top: 20px;
+    margin-top: 40rpx;
 }
 
 .hese {
     color: #1f1f1f;
-    font-size: 16px;
+    font-size: 32rpx;
     font-weight: bolder;
 }
 
 .woqunimalegebidedashabi {
-    margin-top: 20px;
+    margin-top: 40rpx;
 }
 
 
@@ -282,7 +299,7 @@ export default {
 #card_list {
 
     /deep/ .u-swiper__wrapper__item__wrapper__image {
-        border: 1px solid #BF7959;
+        border: 2rpx solid #BF7959;
     }
 
     /deep/ .u-swiper__indicator {
@@ -297,25 +314,25 @@ export default {
     }
 
     /deep/ .vip_name {
-        margin-bottom: 10px;
-        font-size: 18px;
+        margin-bottom: 20rpx;
+        font-size: 34rpx;
         font-weight: bold;
     }
 
     /deep/ .vip_task {
-        margin-bottom: 50px;
+        margin-bottom: 100rpx;
     }
 
     /deep/ .yxhyrs {
-        margin: 10px 0 10px 0;
+        margin: 20rpx 0 20rpx 0;
     }
 
     /deep/ .dsj {
         color: #BF7959;
         position: absolute;
-        top: -16px;
-        right: -12px;
-        font-size: 8px;
+        top: -24rpx;
+        right: -24rpx;
+        font-size: 16rpx;
         font-weight: bold;
     }
 
@@ -335,7 +352,7 @@ export default {
     }
 
     /deep/ .u-navbar__content {
-        height: 50px !important;
+        height: 100rpx !important;
         background: red;
     }
 }
@@ -346,7 +363,7 @@ export default {
     padding-left: 4%;
     margin-bottom: 4%;
     margin-top: 3%;
-    border-left: 4px solid #96854f;
+    border-left: 8rpx solid #96854f;
     color: #96854f;
 }
 
@@ -354,24 +371,24 @@ export default {
     background: #FFFFFF;
     width: 84%;
     margin-left: 6%;
-    border-radius: 10px;
+    border-radius: 20rpx;
     padding: 2%;
 }
 
 .banner {
-    margin-top: 60px;
-    padding: 20px 0 10px 0;
+    margin-top: 120rpx;
+    padding: 40rpx 0 20rpx 0;
 }
 
 .box {
-    padding-bottom: 16px;
+    padding-bottom: 32rpx;
     background: #e6e2e2;
-    height: 1000px;
+    height: 2000rpx;
 }
 
 .abs {
     /deep/ .u-icon__icon.uicon-arrow-left {
-        color: #000000 !important;
+
     }
 
     /deep/ .u-line-1.u-navbar__content__title {
@@ -384,11 +401,11 @@ export default {
     justify-content: center;
 
     &__dot {
-        height: 6px;
-        width: 6px;
-        border-radius: 100px;
+        height: 12rpx;
+        width: 12rpx;
+        border-radius: 200rpx;
         background-color: rgba(255, 255, 255, 0.35);
-        margin: 0 5px;
+        margin: 0 10rpx;
         transition: background-color 0.3s;
 
         &--active {
@@ -398,16 +415,16 @@ export default {
 }
 
 .indicator-num {
-    padding: 2px 0;
+    padding: 4rpx 0;
     background-color: rgba(0, 0, 0, 0.35);
-    border-radius: 100px;
-    width: 35px;
+    border-radius: 200rpx;
+    width: 70rpx;
     @include flex;
     justify-content: center;
 
     &__text {
         color: #FFFFFF;
-        font-size: 12px;
+        font-size: 24rpx;
     }
 }
 

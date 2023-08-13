@@ -69,13 +69,13 @@
 						<!-- 科室 -->
 						<text class="text">{{$t('message.offices')}}：<span class="col9">{{info.officeName}}</span></text>
 						<!-- 擅长 -->
-						<text>{{$t('message.good')}}：<span class="col9">{{info.goodAt}}</span></text>
+						<text>{{$t('message.good')}}：<span class="col9 shanchang">{{info.goodAt}}</span></text>
 					</view>
 				</view>
 				<view class="doctor-desc">
 					<!-- 详细介绍 -->
 					<view class="text" >{{$t('message.detailIntro')}}：</view>
-					<text class="col9">{{info.detail}}</text>
+					<text class="col9 xxjs">{{info.detail}}</text>
 				</view>
 			</view>
 			<!-- 项目详情 -->
@@ -175,6 +175,17 @@
 </script>
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+    .xxjs {
+        line-height:1.1rem;
+        font-size: 0.8rem;
+    }
+    .shanchang {
+        line-height: 1.4rem;
+        font-size: 28rpx;
+    }
+.line-one{
+        line-height: 2rem;
+    }
   #caonimadebi {
     /deep/ .content {
       width: 100px;
@@ -337,7 +348,10 @@
 		box-sizing: border-box;
 	}
 	.text {
-		margin-bottom: 10rpx;
+        font-size: 0.8rem;
+		margin-bottom: 0.6rem;
+        font-weight: bolder;
+        line-height: 0.9rem;
 	}
 	.btn-main {
 		width: 100vw;
