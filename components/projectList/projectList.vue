@@ -168,8 +168,14 @@
     word-break: break-all;
     width: 80%;
     text-align: left;
-    font-size: 14px !important;
+    font-size: 0.9rem !important;
     font-weight: bolder;
+      line-height: 2rem;
+      transform: scale(1,1.2);
+      -ms-transform:scale(1,1.2);
+      -webkit-transform: scale(1,1.2);
+      -moz-transform: scale(1,1.2);
+      -o-transform: scale(1,1.2);
   }
 	.not-data-img{
 			width: 380rpx;

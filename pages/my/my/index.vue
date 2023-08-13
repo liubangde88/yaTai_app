@@ -80,13 +80,13 @@
 						name: this.$t('message.companyIntro'),
 						icon: require('@/static/img/my-icon4.png'),
 						path: '/pages/else/companyIntro',
-						type: '2'
+						type: '1'
 					},
 					{
 						name: this.$t('message.set'),
 						icon: require('@/static/img/my-icon6.png'),
 						path: '/pages/else/setting',
-						type: '1'
+						type: '2'
 					},
 					{
 						name: this.$t('message.version'),
@@ -106,9 +106,10 @@
 		},
 		methods: {
             shareLink () {
-                uni.navigateTo({
-                    url: '/pages/sharingInvitation/index'
-                })
+                this.toPath('/pages/sharingInvitation/index',2)
+                // uni.navigateTo({
+                //     url:
+                // })
             },
 			// 跳转
 			toPath(url, type) {
@@ -123,19 +124,14 @@
 				})
 			},
 			member() {
-				uni.navigateTo({
-					url: '/pages/my/member/index/index'
-				})
+                this.toPath('/pages/my/member/index/index',2)
 			},
 			wallet() {
-				uni.navigateTo({
-					url: '/pages/my/wallet/index'
-				})
+                this.toPath('/pages/my/wallet/index',2)
+
 			},
 			withdrawal() {
-				uni.navigateTo({
-					url: '/pages/else/withdrawal'
-				})
+                this.toPath('/pages/else/withdrawal',2)
 			},
 			// 退出
 			logOut() {

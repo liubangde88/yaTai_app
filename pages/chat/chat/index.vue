@@ -1,7 +1,7 @@
 <template>
     <view class="box">
         <view class="header-box fixed">
-            <image src="@/static/img/agent-ban.png" class="header-ban img"></image>
+            <image src="@/static/img/other-ban.jpg" class="header-ban img"></image>
             <u-navbar leftIcon="" :title="$t('tabbar.chat')" bgColor="rgba(255,255,255,.0)"
                       :titleStyle="{color: '#fff'}"></u-navbar>
         </view>
@@ -55,6 +55,7 @@ export default {
                         item.qrName = item.qrName + this.$t('message.kefu')
                     })
                 }
+                console.log(res)
                 this.list = res.ls
             })
         },
@@ -86,9 +87,11 @@ export default {
         // 前往
         toPath(url) {
             url = encodeURIComponent(url)
-            uni.navigateTo({
-                url: '/pages/else/companyIntro?url=' + url
-            })
+            console.log(unescape(url))
+            window.location.href = unescape(url);
+            // uni.navigateTo({
+            //     url: url
+            // })
         }
 
     }
@@ -139,15 +142,18 @@ export default {
     justify-content: space-between;
     color: blue;
     margin-right: 10rpx;
+    background: #A19878;
+    border-radius: 20rpx;
 }
 
 .copy-btn {
     width: 150rpx;
     height: 60rpx;
     border-radius: 15rpx;
-    background: #51bfdb;
     line-height: 60rpx;
     text-align: center;
+    background: #A19878;
+
 }
 
 .kefu-img {

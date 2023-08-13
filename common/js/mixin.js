@@ -22,7 +22,7 @@ export const mixin = {
 		toLogin() {
 			let that = this
 			uni.showModal({
-			  title: that.$t('message.loginPrompt'),
+
 			  content: that.$t('message.prompt'),
 			  confirmText: that.$t('message.goLogin'),
 				cancelText: that.$t('message.cancel'),

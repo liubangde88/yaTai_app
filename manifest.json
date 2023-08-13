@@ -1,0 +1,58 @@
+{
+    "name" : "EHA",
+    "description" : "医疗美容",
+    "versionName" : "1",
+    "appid" : "__UNI__B039451",
+    "app-plus" : {
+        "distribute" : {
+            "icons" : {
+                "android" : {
+                    "hdpi" : "static/img/logo.png",
+                    "xhdpi" : "static/img/logo.png",
+                    "xxhdpi" : "static/img/logo.png",
+                    "xxxhdpi" : "static/img/logo.png"
+                },
+                "ios" : {
+                    "appstore" : "static/img/logo.png",
+                    "iphone" : {
+                        "app@2x" : "static/img/logo.png",
+                        "app@3x" : "static/img/logo.png",
+                        "spotlight@2x" : "static/img/logo.png",
+                        "spotlight@3x" : "static/img/logo.png",
+                        "settings@2x" : "static/img/logo.png",
+                        "settings@3x" : "static/img/logo.png",
+                        "notification@2x" : "static/img/logo.png",
+                        "notification@3x" : "static/img/logo.png"
+                    },
+                    "ipad" : {
+                        "notification@2x" : "static/img/logo.png",
+                        "notification" : "static/img/logo.png",
+                        "settings@2x" : "static/img/logo.png",
+                        "settings" : "static/img/logo.png",
+                        "spotlight@2x" : "static/img/logo.png",
+                        "spotlight" : "static/img/logo.png",
+                        "app" : "static/img/logo.png",
+                        "app@2x" : "static/img/logo.png",
+                        "proapp@2x" : "static/img/logo.png"
+                    }
+                }
+            },
+            "splashscreen" : {
+                "androidStyle" : "default",
+                "android" : {
+                    "hdpi" : "static/img/download.png",
+                    "xhdpi" : "static/img/download.png",
+                    "xxhdpi" : "static/img/download.png"
+                }
+            }
+        }
+    },
+    "h5" : {
+        "devServer" : {
+            "https" : false
+        },
+        "router" : {
+            "base" : "./"
+        }
+    }
+}
