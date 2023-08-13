@@ -266,9 +266,31 @@
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
 	.setting-container{
+        /deep/ .u-line-1.u-navbar__content__title{
+            font-size: 1rem;
+            line-height: 3rem;
+            color: #FFFFFF !important;
+        }
+        /deep/ .u-navbar--fixed > .u-navbar__content {
+            background: url("@/static/img/other-ban.jpg");
+            .u-navbar__content__left{
+                .u-icon.u-icon--right {
+                    .u-icon__icon.uicon-arrow-left {
+                        color: #FFFFFF !important;
+                    }
+                }
+            }
+        }
+
 		background: url('@/static/img/notice-bg.png') no-repeat;
 		background-size: 100% 100%;
 		height: 100vh;
+
+        /deep/ .u-action-sheet__item-wrap {
+            .u-action-sheet__item-wrap__item {
+                line-height: 2rem;
+            }
+        }
 	}
 	.my-main {
 		margin-top: 80rpx;
