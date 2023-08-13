@@ -7,20 +7,20 @@
 		</view>
 		<view class="channel">
 			<view class="item" @click="member">
-				<image src="@/static/img/my-channel-img1.png" class="img" />
-				<view>{{$t('message.myPageAgent')}}</view>
+				<image src="@/static/img/my-channel-img1.png" class="img member" />
+				<view class="stxt">{{$t('message.myPageAgent')}}</view>
 			</view>
 			<view class="item" @click="wallet">
-				<image src="@/static/img/my-channel-img2.png" class="img" />
-				<view>{{$t('message.myPageWallet')}}</view>
+				<image src="@/static/img/my-channel-img2.png" class="img member" />
+				<view class="stxt">{{$t('message.myPageWallet')}}</view>
 			</view>
 			<view class="item" @click="shareLink">
-				<image src="@/static/img/my-channel-img3.png" class="img" />
-				<view>{{$t('message.shareFriend')}}</view>
+				<image src="@/static/img/my-channel-img3.png" class="img member" />
+				<view class="stxt">{{$t('message.shareFriend')}}</view>
 			</view>
 			<view class="item" @click="withdrawal">
-				<image src="@/static/img/my-channel-img4.png" class="img" />
-				<view>{{$t('message.myPageWithdrawal')}}</view>
+				<image src="@/static/img/my-channel-img4.png" class="img member" />
+				<view class="stxt">{{$t('message.myPageWithdrawal')}}</view>
 			</view>
 		</view>
 		<view class="options">
@@ -156,6 +156,11 @@
 </script>
 
 <style scoped lang="scss">
+    .stxt {
+        padding: 1rem;
+        font-weight: bolder;
+        font-size: 0.8rem;
+    }
 	.my-container{
 		background: url('@/static/img/my-bg.png') no-repeat;
 		background-size: 100%;

@@ -282,7 +282,7 @@
 
 	.header-img {
 		width: 100%;
-		height: 192px;
+		height: 12rem;
 	}
 
 	.header-info {

@@ -5,24 +5,24 @@
 			<view class="search-box abs">
 				<view class="info top-r bgWhite">
 					<view class="box-r">
-						<u-tabs :list="menus" lineColor="#fff" :activeStyle="activeStyle" :inactiveStyle="inactiveStyle"
+						<u-tabs :list="menus" lineColor="#fff" class="tabs_num2" :activeStyle="activeStyle" :inactiveStyle="inactiveStyle"
 							:itemStyle="itemStyle" @click="selecthandle"></u-tabs>
 					</view>
 				</view>
 			</view>
 		</view>
 		<view class="box-r product-search">
-			<u-search 
-			:placeholder="$t('message.search')" 
-			v-model="search" 
-			:clearabled="true" 
+			<u-search
+			:placeholder="$t('message.search')"
+			v-model="search"
+			:clearabled="true"
 			:showAction="false"
-			height="80rpx" 
-			searchIconColor="#86784B" 
-			searchIconSize="26" 
+			height="80rpx"
+			searchIconColor="#86784B"
+			searchIconSize="26"
 			placeholderColor="#333"
-			color="#333" 
-			bg-color="#eaf5f8" 
+			color="#333"
+			bg-color="#eaf5f8"
 			@change="searchHandle" />
 		</view>
 		<view class="project-main">
@@ -177,6 +177,11 @@
 </script>
 <style src="@/common/css/other.scss" lang="scss" scoped></style>
 <style scoped lang="scss">
+    .tabs_num2 {
+        /deep/ .u-tabs__wrapper__nav__item__text {
+            line-height: 1.5rem;
+        }
+    }
 	.header-box {
 		/* #ifdef APP-PLUS */
 		height: 488rpx;
@@ -208,7 +213,7 @@
 		height: 120rpx;
 		border-radius: 16rpx;
 	}
-	
+
 	.project-main {
 		/* #ifdef APP-PLUS */
 		// margin-top: 484rpx;

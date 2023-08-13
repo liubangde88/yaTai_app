@@ -12,7 +12,7 @@
 						</view>
 						<view style="max-width: 160px;">
 							<text class="col1 fs28 word-b">{{item.dname}}</text>
-							<view class="mag-b fs26 col6 line-one">
+							<view class="fs26 col6 line-one">
 								{{item.pcontent}}
 							</view>
 						</view>
@@ -21,21 +21,22 @@
 						</view>
 					</view>
 					<view class="li-main flex">
-						<view>
+						<view class="mag-b">
 							<view class="title xmmc-title">{{$t('message.pName')}}</view>
 							<view class="content xmmc">
 								{{item.pname}}
 							</view>
 						</view>
 						<!-- 项目金额 -->
-						<view>
+						<view class=" mag-b">
 							<view class="title">{{$t('message.money')}}</view>
 							<view class="content">
 								<span>￥{{item.pprice || 0}}</span><span>（HK$）</span>
 							</view>
 						</view>
+                        <!--项目提成-->
 						<view class="mag-b fs26 col6">
-							<view class="title">{{$t('message.percentage')}}</view>
+							<view class="title tihceng">{{$t('message.percentage')}}</view>
 							<view class="content">
 								<span>{{item.agentPercent || 0}}%</span>
 							</view>
@@ -147,15 +148,25 @@
 </script>
 
 <style scoped>
+.tihceng {
+    text-align: center !important;
+}
+ .li-main > .mag-b {
+     width: 33.2%;
+ }
+.line-one {
+    margin-top: 0.5rem;
+    line-height: 2rem;
+}
   .xmmc-title {
-    text-align: left;
+    text-align: left !important;
   }
   .xmmc {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     word-break: break-all;
-    width: 100px;
+    width: 80%;
     text-align: left;
     font-size: 14px !important;
     font-weight: bolder;
@@ -211,17 +222,20 @@
 	.li-main {
 		justify-content: space-between;
 		text-align: center;
-		margin-top: 60rpx;
-		margin-bottom: 50rpx;
+		margin-top: 0.8rem;
+
 	}
+
 	.li-main .title{
-		font-size: 12px;
-		color: #979797;
-    text-align: left;
+        font-size: 6px;
+        color: #979797;
+        text-align: left;
+        padding-left: 0.2rem;
 	}
 	.li-main .content{
 		font-size: 16px;
 		color: #000000;
+        font-weight: bold;
 	}
 
 	.li-right {
@@ -260,7 +274,7 @@
 	}
 	
 	.mag-b {
-		margin-bottom: 10rpx;
+        line-height: 1.8rem;
 	}
 	.release-date{
 		justify-content: space-between;
@@ -269,6 +283,7 @@
 		margin-right: -17px;
 		padding-left: 17px;
 		padding-right: 17px;
-		padding-top: 10px;
+		padding-top: 0.6rem;
+        line-height: 1rem;
 	}
 </style>
